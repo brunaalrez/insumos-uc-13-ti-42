@@ -1,0 +1,32 @@
+POST http://localhost:3000/insumos HTTP/1.1
+content-type: application/json
+
+{
+    "areia": "10kg",
+    "pedra": "10kg",
+    "cimento": "10kg",
+    "pedrisco": "20kg"
+}
+
+###
+
+GET http://localhost:3000/insumos HTTP/1.1
+content-type: application/json
+
+###
+
+PUT http://localhost:3000/insumos/1 HTTP/1.1
+content-type: application/json
+
+{
+    "areia": "10kg",
+    "pedra": "10kg",
+    "cimento": "10kg",
+    "pedrisco": "40kg"
+}
+
+###
+
+DELETE  http://localhost:3000/insumos/2 HTTP/1.1
+content-type: application/json
+ 
