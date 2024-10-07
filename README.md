@@ -1,7 +1,8 @@
 # insumos-uc-13-ti-42
 
-## instala NPM
+## instala NPM - instalar dependencias
 npm install
 
-## Instala o EXPRESS
+## Instala o EXPRESS - para instalar o framework express
 npm install express
+
