@@ -1,8 +1,6 @@
-const express =  require('express')
-const app = express()
-var vusuarios = []
-
-app.use(express.json())
+const express = requires('express')
+const router = express.Router()
+router.use(express.json())
 
 function create_usuarios(req, res){
 
@@ -22,7 +20,7 @@ let {pnome, pdataNascimento, psenha} = req.body
     })
 }
 
-app.post( '/usuarios', create_usuarios)
+router.post( '/create', create_usuarios)
 
 function read_usuarios(res, res){
     return res.status(200).json({
@@ -31,7 +29,7 @@ function read_usuarios(res, res){
     })
 }
 
-app.get( "/usuarios/:id", read_usuarios)
+router.get( "/show/:id", show_usuarios)
 
 function show_usuarios(req, res){
     let {id} = req.params
@@ -51,7 +49,7 @@ function show_usuarios(req, res){
     })
 }
 
-app.put( '/usuarios/:id', show_usuarios)
+router.put( '/update/:id', update_usuarios)
 function update_usuarios(req, res){
     let {id} = req.params
 
@@ -75,7 +73,7 @@ function update_usuarios(req, res){
     })
 }
 
-app.get( '/usuarios', read_usuarios)
+router.get( '/read', read_usuarios)
 
 function show_usuarios(req, res){
     let{id} = req.params
@@ -110,10 +108,7 @@ function delete_usuarios(req, res){
         message: "não encontrado"
     })
 }
-app.delete('/usuarios/:id', delete_usuarios)
+router.delete('/delete/:id', delete_usuarios)
 
 
-
-app.listen(3000, () => {
-    console.log('http://localhost:3000')
-})
+module.exports = router

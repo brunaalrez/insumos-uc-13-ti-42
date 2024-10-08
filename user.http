@@ -1,4 +1,4 @@
-POST http://localhost:3000/usuarios HTTP/1.1
+POST http://localhost:3000/usuarios/create HTTP/1.1
 content-type: application/json
 
 {
@@ -9,16 +9,16 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/usuarios HTTP/1.1
+GET http://localhost:3000/usuarios/read HTTP/1.1
 content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/usuarios/1 HTTP/1.1
+DELETE http://localhost:3000/usuarios/delete/1 HTTP/1.1
 content-type: application/json
 
 ###
-PUT  http://localhost:3000/usuarios/2 HTTP/1.1
+PUT  http://localhost:3000/usuarios/update/2 HTTP/1.1
 content-type: application/json
 
 {
