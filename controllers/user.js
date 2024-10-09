@@ -2,13 +2,13 @@ var vusuarios = []
 
 function create_usuarios(req, res){
 
-    let {pnome, pdataNascimento, psenha} = req.body
+    let {nome, dataNascimento, senha} = req.body
     
         var ousuarios = {
             "id": vusuarios.length, 
-            "nome": pnome,
-            "dataNascimento": pdataNascimento,
-            "senha": psenha,
+            "nome": nome,
+            "dataNascimento": dataNascimento,
+            "senha": senha,
             "deletedAt":null
         }
         vusuarios.push(ousuarios)
