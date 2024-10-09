@@ -1,8 +1,3 @@
-const express = require('express'); 
-const app = express();              
-
-app.use(express.json());
-
 var vusers = []
 
 function lista_insumos(req, res){ 
@@ -23,16 +18,12 @@ function lista_insumos(req, res){
     })
 }
 
-app.post('/insumos', lista_insumos)
-
 function read_insumos(req, res){
     return res.status(200).json({
         message:"Todos os insumos",
         db: vusers.filter(u => u.deletedAt == null)
     })
 }
-
-app.get('/insumos', read_insumos)
 
 function read_parametros(req, res){
     let{id} = req.params;
@@ -51,8 +42,6 @@ function read_parametros(req, res){
         db: vusers[idx]
     })
 }
-
-app.get('/insumos/:id', read_parametros)
 
 function update_insumos(req, res){
     let{id} = req.params;
@@ -79,8 +68,6 @@ function update_insumos(req, res){
     })
 }
 
-app.put('/insumos/:id', update_insumos)
-
 function delete_insumos(req, res){
     let{id} = req.params;
 
@@ -88,7 +75,10 @@ function delete_insumos(req, res){
 
     if(idx != -1){
         /*vusers.slice(idx)*/
-        vusers[idx].deletedAt = new Date()
+        const express = require('express'); 
+        const app = express();              
+        
+        app.use(express.json());users[idx].deletedAt = new Date()
         return res.status(203).json({ 
             message: "Insomos deletado"
         })
@@ -101,8 +91,11 @@ function delete_insumos(req, res){
 
 }
 
-app.delete('/insumos/:id', delete_insumos)
-
-app.listen(3000, () => {
-    console.log('http://localhost:3000')
-})
+module.exports = {
+    lista_insumos,
+    read_insumos,
+    read_insumos,
+    read_parametros,
+    update_insumos,
+    delete_insumos
+}
