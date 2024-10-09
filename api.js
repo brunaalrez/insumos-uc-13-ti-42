@@ -5,7 +5,7 @@ app.use( express.json())
 const  cr_usuarios = require('../routes/user')
 app.user('/usuarios', cr_usuarios)
 
-const cr_historico =  require('./Historico')
+const cr_historico =  require('./routes/historico')
 app.use('/historico', cr_historico)
 
 app.listen(3000, () => {
