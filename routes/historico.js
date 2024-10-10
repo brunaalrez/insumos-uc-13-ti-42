@@ -13,7 +13,7 @@ router.get('/read_user', chistorico.read_users)
 router.get('/encontrar_id/:id', chistorico.encontrar_id)
 
 
-router.put('/atualizar_user/:id',chistorico.encontrar_user)
+router.put('/atualizar_user/:id',chistorico.atualizar_user)
 
 
 router.delete('/delete/:id', chistorico.delete_user)
