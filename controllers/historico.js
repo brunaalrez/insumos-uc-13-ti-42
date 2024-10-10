@@ -28,7 +28,7 @@ function read_historico (req, res){
 
 }
 
-function encontrar_historico (req, res){ 
+function show_historico (req, res){ 
     
     let {id} = req.params;
     
@@ -50,13 +50,13 @@ function encontrar_historico (req, res){
 
 }
 
-function atualizar_historico (req, res){
+function update_historico (req, res){
 
     let {id} = req.params;
     
-    const idx = vhistoricos[idx].findIndex(u => u.id == id)
+    const idx = vhistoricos.findIndex(u => u.id == id)
 
-    if(idx ==-1 || vhistoricos.delete_historico != null){
+    if(idx ==-1 || vhistoricos[idx].deletedAt != null){
         return res.status(404).json({
             message: "nao encontrado",
             db: null
@@ -83,11 +83,16 @@ function atualizar_historico (req, res){
 function delete_historico(req, res){
     let{id} = req.params 
 
-    const idx = vhistoricos[idx].findIndex(u => u.id == id)
+    const idx = vhistoricos.findIndex(u => u.id == id)
+    
     if(idx != -1){
         //vhistoricos.slice(idx) - Deletar definitivamente
-        vhistoricos[idx].deletedAt = new Date
-        return res.status(203).jason({
+        
+        const express = require('express')    
+        const app = express();
+        
+        app.use(express.json());vhistoricos[idx].deletedAt = new Date()
+        return res.status(203).json({
             message: "Usuario excluido"
         })
     }
@@ -99,7 +104,7 @@ function delete_historico(req, res){
 module.exports = {
     create_historico,
     read_historico,
-    encontrar_historico,
-    atualizar_historico,
+    show_historico,
+    update_historico,
     delete_historico
 }

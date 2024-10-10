@@ -10,10 +10,10 @@ router.post('/create', chistorico.create_historico)
 router.get('/read', chistorico.read_historico)
 
 
-router.get('/show/:id', chistorico.encontrar_historico)
+router.get('/show/:id', chistorico.show_historico)
 
 
-router.put('/update/:id',chistorico.atualizar_historico)
+router.put('/update/:id',chistorico.update_historico)
 
 
 router.delete('/delete/:id', chistorico.delete_historico)
