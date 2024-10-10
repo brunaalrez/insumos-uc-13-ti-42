@@ -1,4 +1,4 @@
-POST http://localhost:3000/lista_insumos HTTP/1.1
+POST http://localhost:3000/insumos/create HTTP/1.1
 content-type: application/json
 
 {
@@ -10,12 +10,12 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/read_insumos HTTP/1.1
+GET http://localhost:3000/insumos/read HTTP/1.1
 content-type: application/json
 
 ###
 
-PUT http://localhost:3000/update_insumos/1 HTTP/1.1
+PUT http://localhost:3000/insumos/update/1 HTTP/1.1
 content-type: application/json
 
 {
@@ -27,6 +27,6 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:3000/delete_insumos/2 HTTP/1.1
+DELETE  http://localhost:3000/insumos/delete/2 HTTP/1.1
 content-type: application/json
  
