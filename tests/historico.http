@@ -1,4 +1,4 @@
-POST   http://localhost:3000/historico/create HTTP/1.1
+POST   http://10.0.2.255:3000/historico/create HTTP/1.1
 content-type: application/json
 
 {
@@ -10,15 +10,15 @@ content-type: application/json
 
 ###
 
-GET  http://localhost:3000/historico/read HTTP/1.1
+GET  http://10.0.2.255:3000/historico/read HTTP/1.1
 content-type: application/json
 
 ###
-GET  http://localhost:3000/historico/show/4 HTTP/1.1
+GET  http://10.0.2.255:3000/historico/show/4 HTTP/1.1
 content-type: application/json
 
 ###
-PUT  http://localhost:3000/historico/update/4 HTTP/1.1
+PUT  http://10.0.2.255:3000/historico/update/4 HTTP/1.1
 content-type: application/json
 
 {
@@ -29,5 +29,5 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/historico/delete/1 HTTP/1.1
+DELETE http://10.0.2.255:3000/historico/delete/1 HTTP/1.1
 content-type: application/json
