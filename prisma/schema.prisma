@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id Int @id @default(autoincrement())
+  nome String
+  data_de_nascimento String
+  cpf String
+  rg String
+  email String
+  tipo_de_usuario Int
+  rua String
+  numero String
+  bairro String
+  cidade String
+  uf String
+  senha String
+  criado_em DateTime
+  criado_por String
+  @@map("criar usuários") // define o nome da tebela
+}
+
+model Tipo_Produto_Insumo {
+  id Int @id @default(autoincrement())
+  tipo_de_insumo String
+  quantidade Int
+  fornecedor String
+  tipo_de_produto String
+  @@map("estoque") // define o nome da tebela
+}
+
+model Movimentacao{
+  id Int @id @default(autoincrement())
+  id_do_usuario Int
+  id_do_insumo Int
+  id_do_produto Int
+  quantidade Int
+  date DateTime
+  @@map("movimentação") // define o nome da tebela
+}
