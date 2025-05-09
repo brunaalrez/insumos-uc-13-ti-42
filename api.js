@@ -11,6 +11,16 @@ app.get("/", (req, res)=>{
     res.send("Konbanwa");
 });
 
+/* 
+
+ROTAS PARA SEREM FEITAS:
+
+- Rota de login: fazer um POST na rota /autenticar e validar se o email e a senha estão corretos
+- Rota de GET para cada tipo de bloco: /produtos/b
+- Todas as rotas para movimentações
+
+*/
+
 const produtos = [{
     id: 1, 
     nome: "Água com gás Pompeia", 
@@ -136,6 +146,7 @@ app.get('/usuarios', async (req, res) => {
   });
   
  
+
   // Rotas para Movimentacao
  
 // Rota para obter todas as movimentações
@@ -175,6 +186,7 @@ app.get('/tipo_produto_insumo', async (req, res) => {
       res.json(tipo); // Retorna o tipo encontrado
     }
   });
+
 
 app.listen(port, ()=> {
     console.log(`REST API iniciada em http://localhost:${port}`);
