@@ -134,6 +134,7 @@ exports.Prisma.UsuarioScalarFieldEnum = {
   cidade: 'cidade',
   uf: 'uf',
   senha: 'senha',
+  telefone: 'telefone',
   criado_em: 'criado_em',
   criado_por: 'criado_por'
 };
@@ -172,6 +173,7 @@ exports.Prisma.UsuarioOrderByRelevanceFieldEnum = {
   cidade: 'cidade',
   uf: 'uf',
   senha: 'senha',
+  telefone: 'telefone',
   criado_por: 'criado_por'
 };
 

@@ -1063,6 +1063,7 @@ export namespace Prisma {
     cidade: string | null
     uf: string | null
     senha: string | null
+    telefone: string | null
     criado_em: Date | null
     criado_por: string | null
   }
@@ -1081,6 +1082,7 @@ export namespace Prisma {
     cidade: string | null
     uf: string | null
     senha: string | null
+    telefone: string | null
     criado_em: Date | null
     criado_por: string | null
   }
@@ -1099,6 +1101,7 @@ export namespace Prisma {
     cidade: number
     uf: number
     senha: number
+    telefone: number
     criado_em: number
     criado_por: number
     _all: number
@@ -1129,6 +1132,7 @@ export namespace Prisma {
     cidade?: true
     uf?: true
     senha?: true
+    telefone?: true
     criado_em?: true
     criado_por?: true
   }
@@ -1147,6 +1151,7 @@ export namespace Prisma {
     cidade?: true
     uf?: true
     senha?: true
+    telefone?: true
     criado_em?: true
     criado_por?: true
   }
@@ -1165,6 +1170,7 @@ export namespace Prisma {
     cidade?: true
     uf?: true
     senha?: true
+    telefone?: true
     criado_em?: true
     criado_por?: true
     _all?: true
@@ -1270,6 +1276,7 @@ export namespace Prisma {
     cidade: string
     uf: string
     senha: string
+    telefone: string
     criado_em: Date
     criado_por: string
     _count: UsuarioCountAggregateOutputType | null
@@ -1307,6 +1314,7 @@ export namespace Prisma {
     cidade?: boolean
     uf?: boolean
     senha?: boolean
+    telefone?: boolean
     criado_em?: boolean
     criado_por?: boolean
   }, ExtArgs["result"]["usuario"]>
@@ -1327,11 +1335,12 @@ export namespace Prisma {
     cidade?: boolean
     uf?: boolean
     senha?: boolean
+    telefone?: boolean
     criado_em?: boolean
     criado_por?: boolean
   }
 
-  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_de_nascimento" | "cpf" | "rg" | "email" | "tipo_de_usuario" | "rua" | "numero" | "bairro" | "cidade" | "uf" | "senha" | "criado_em" | "criado_por", ExtArgs["result"]["usuario"]>
+  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_de_nascimento" | "cpf" | "rg" | "email" | "tipo_de_usuario" | "rua" | "numero" | "bairro" | "cidade" | "uf" | "senha" | "telefone" | "criado_em" | "criado_por", ExtArgs["result"]["usuario"]>
 
   export type $UsuarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Usuario"
@@ -1350,6 +1359,7 @@ export namespace Prisma {
       cidade: string
       uf: string
       senha: string
+      telefone: string
       criado_em: Date
       criado_por: string
     }, ExtArgs["result"]["usuario"]>
@@ -1734,6 +1744,7 @@ export namespace Prisma {
     readonly cidade: FieldRef<"Usuario", 'String'>
     readonly uf: FieldRef<"Usuario", 'String'>
     readonly senha: FieldRef<"Usuario", 'String'>
+    readonly telefone: FieldRef<"Usuario", 'String'>
     readonly criado_em: FieldRef<"Usuario", 'DateTime'>
     readonly criado_por: FieldRef<"Usuario", 'String'>
   }
@@ -3948,6 +3959,7 @@ export namespace Prisma {
     cidade: 'cidade',
     uf: 'uf',
     senha: 'senha',
+    telefone: 'telefone',
     criado_em: 'criado_em',
     criado_por: 'criado_por'
   };
@@ -3998,6 +4010,7 @@ export namespace Prisma {
     cidade: 'cidade',
     uf: 'uf',
     senha: 'senha',
+    telefone: 'telefone',
     criado_por: 'criado_por'
   };
 
@@ -4066,6 +4079,7 @@ export namespace Prisma {
     cidade?: StringFilter<"Usuario"> | string
     uf?: StringFilter<"Usuario"> | string
     senha?: StringFilter<"Usuario"> | string
+    telefone?: StringFilter<"Usuario"> | string
     criado_em?: DateTimeFilter<"Usuario"> | Date | string
     criado_por?: StringFilter<"Usuario"> | string
   }
@@ -4084,6 +4098,7 @@ export namespace Prisma {
     cidade?: SortOrder
     uf?: SortOrder
     senha?: SortOrder
+    telefone?: SortOrder
     criado_em?: SortOrder
     criado_por?: SortOrder
     _relevance?: UsuarioOrderByRelevanceInput
@@ -4106,6 +4121,7 @@ export namespace Prisma {
     cidade?: StringFilter<"Usuario"> | string
     uf?: StringFilter<"Usuario"> | string
     senha?: StringFilter<"Usuario"> | string
+    telefone?: StringFilter<"Usuario"> | string
     criado_em?: DateTimeFilter<"Usuario"> | Date | string
     criado_por?: StringFilter<"Usuario"> | string
   }, "id">
@@ -4124,6 +4140,7 @@ export namespace Prisma {
     cidade?: SortOrder
     uf?: SortOrder
     senha?: SortOrder
+    telefone?: SortOrder
     criado_em?: SortOrder
     criado_por?: SortOrder
     _count?: UsuarioCountOrderByAggregateInput
@@ -4150,6 +4167,7 @@ export namespace Prisma {
     cidade?: StringWithAggregatesFilter<"Usuario"> | string
     uf?: StringWithAggregatesFilter<"Usuario"> | string
     senha?: StringWithAggregatesFilter<"Usuario"> | string
+    telefone?: StringWithAggregatesFilter<"Usuario"> | string
     criado_em?: DateTimeWithAggregatesFilter<"Usuario"> | Date | string
     criado_por?: StringWithAggregatesFilter<"Usuario"> | string
   }
@@ -4281,6 +4299,7 @@ export namespace Prisma {
     cidade: string
     uf: string
     senha: string
+    telefone: string
     criado_em: Date | string
     criado_por: string
   }
@@ -4299,6 +4318,7 @@ export namespace Prisma {
     cidade: string
     uf: string
     senha: string
+    telefone: string
     criado_em: Date | string
     criado_por: string
   }
@@ -4316,6 +4336,7 @@ export namespace Prisma {
     cidade?: StringFieldUpdateOperationsInput | string
     uf?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
     criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
     criado_por?: StringFieldUpdateOperationsInput | string
   }
@@ -4334,6 +4355,7 @@ export namespace Prisma {
     cidade?: StringFieldUpdateOperationsInput | string
     uf?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
     criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
     criado_por?: StringFieldUpdateOperationsInput | string
   }
@@ -4352,6 +4374,7 @@ export namespace Prisma {
     cidade: string
     uf: string
     senha: string
+    telefone: string
     criado_em: Date | string
     criado_por: string
   }
@@ -4369,6 +4392,7 @@ export namespace Prisma {
     cidade?: StringFieldUpdateOperationsInput | string
     uf?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
     criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
     criado_por?: StringFieldUpdateOperationsInput | string
   }
@@ -4387,6 +4411,7 @@ export namespace Prisma {
     cidade?: StringFieldUpdateOperationsInput | string
     uf?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
     criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
     criado_por?: StringFieldUpdateOperationsInput | string
   }
@@ -4561,6 +4586,7 @@ export namespace Prisma {
     cidade?: SortOrder
     uf?: SortOrder
     senha?: SortOrder
+    telefone?: SortOrder
     criado_em?: SortOrder
     criado_por?: SortOrder
   }
@@ -4584,6 +4610,7 @@ export namespace Prisma {
     cidade?: SortOrder
     uf?: SortOrder
     senha?: SortOrder
+    telefone?: SortOrder
     criado_em?: SortOrder
     criado_por?: SortOrder
   }
@@ -4602,6 +4629,7 @@ export namespace Prisma {
     cidade?: SortOrder
     uf?: SortOrder
     senha?: SortOrder
+    telefone?: SortOrder
     criado_em?: SortOrder
     criado_por?: SortOrder
   }

@@ -28,6 +28,7 @@ model Usuario {
   cidade String
   uf String
   senha String
+  telefone String
   criado_em DateTime
   criado_por String
   @@map("criar usuários") // define o nome da tebela
