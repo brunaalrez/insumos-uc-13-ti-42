@@ -15,7 +15,7 @@ app.get("/", (req, res)=>{
 
 ROTAS PARA SEREM FEITAS:
 
-- Rota de GET para cada tipo de bloco: /produtos/:tipo
+- Rota de GET para cada tipo de bloco: /produtos/:tipo FEITO
 - Todas as rotas para movimentações
 - Rota de login: fazer um POST na rota /autenticar e validar se o email e a senha estão corretos
 
