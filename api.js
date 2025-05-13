@@ -124,33 +124,33 @@ ROTAS PARA SEREM FEITAS:
  
 // Rota para obter todos os Usuários
 
-app.get('/usuarios', async (req, res) => {
+// app.get('/usuarios', async (req, res) => {
 
-    const usuarios = await prisma.usuario.findMany(); // Busca todos os usuários no banco
+//     const usuarios = await prisma.usuario.findMany(); // Busca todos os usuários no banco
   
-    res.json(usuarios); // Retorna a lista de usuários em formato JSON
+//     res.json(usuarios); // Retorna a lista de usuários em formato JSON
   
-  });
+//   });
    
-  // Rota para obter um usuário específico pelo ID
+//   // Rota para obter um usuário específico pelo ID
   
-  app.get('/usuarios/:id', async (req, res) => {
+//   app.get('/usuarios/:id', async (req, res) => {
   
-    const id = parseInt(req.params.id); // Converte o ID da URL para número
+//     const id = parseInt(req.params.id); // Converte o ID da URL para número
   
-    const usuario = await prisma.usuario.findUnique({ where: { id } }); // Busca o usuário pelo ID
+//     const usuario = await prisma.usuario.findUnique({ where: { id } }); // Busca o usuário pelo ID
    
-    if (usuario === null) {
+//     if (usuario === null) {
   
-      return res.status(404).json({ mensagem: 'Usuário não encontrado' }); // Retorna erro se não encontrado
+//       return res.status(404).json({ mensagem: 'Usuário não encontrado' }); // Retorna erro se não encontrado
   
-    } else {
+//     } else {
   
-      res.json(usuario); // Retorna o usuário encontrado
+//       res.json(usuario); // Retorna o usuário encontrado
   
-    }
+//     }
   
-  });
+//   });
   
  
 
