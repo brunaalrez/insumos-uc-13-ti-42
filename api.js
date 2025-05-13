@@ -213,6 +213,24 @@ app.get('/tipo_produto_insumo', async (req, res) => {
     }
   })
 
+  app.get('/insumo/:tipo', async (req, res) =>{
+    const tipo_de_produto = 'insumo';
+    const tipo_de_insumo = req.params.tipo;
+
+    const insumo = await prisma.tipo_Produto_Insumo.findMany({
+        where: {
+            tipo_de_produto,
+            tipo_de_insumo
+        }
+    });
+
+    if(insumo.length === 0) {
+        return res.status(404).json({mensagem: 'Insumo não existe'});
+    }else{
+        return res.status(200).json(insumo[0]);
+    }
+  })
+
 app.listen(port, ()=> {
     console.log(`REST API iniciada em http://localhost:${port}`);
 });
