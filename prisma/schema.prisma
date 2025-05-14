@@ -49,7 +49,8 @@ model Movimentacao{
   id_insumo_produto Int
   quantidade Int
   tipo_movimentacao String
+  tipo_i_p String
   date DateTime
   tpi Tipo_Produto_Insumo @relation(fields: [id_insumo_produto], references: [id])
-  @@map("movimentação") // define o nome da tebela
+  @@map("movimentacao") // define o nome da tebela
 }

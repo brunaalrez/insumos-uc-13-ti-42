@@ -14,11 +14,6 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Usuario
- * 
- */
-export type Usuario = $Result.DefaultSelection<Prisma.$UsuarioPayload>
-/**
  * Model Tipo_Produto_Insumo
  * 
  */
@@ -36,8 +31,8 @@ export type Movimentacao = $Result.DefaultSelection<Prisma.$MovimentacaoPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Usuarios
- * const usuarios = await prisma.usuario.findMany()
+ * // Fetch zero or more Tipo_Produto_Insumos
+ * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
  * ```
  *
  *
@@ -57,8 +52,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Usuarios
-   * const usuarios = await prisma.usuario.findMany()
+   * // Fetch zero or more Tipo_Produto_Insumos
+   * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
    * ```
    *
    *
@@ -155,16 +150,6 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.usuario`: Exposes CRUD operations for the **Usuario** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Usuarios
-    * const usuarios = await prisma.usuario.findMany()
-    * ```
-    */
-  get usuario(): Prisma.UsuarioDelegate<ExtArgs, ClientOptions>;
-
-  /**
    * `prisma.tipo_Produto_Insumo`: Exposes CRUD operations for the **Tipo_Produto_Insumo** model.
     * Example usage:
     * ```ts
@@ -623,7 +608,6 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Usuario: 'Usuario',
     Tipo_Produto_Insumo: 'Tipo_Produto_Insumo',
     Movimentacao: 'Movimentacao'
   };
@@ -644,76 +628,10 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "usuario" | "tipo_Produto_Insumo" | "movimentacao"
+      modelProps: "tipo_Produto_Insumo" | "movimentacao"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Usuario: {
-        payload: Prisma.$UsuarioPayload<ExtArgs>
-        fields: Prisma.UsuarioFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.UsuarioFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.UsuarioFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          findFirst: {
-            args: Prisma.UsuarioFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.UsuarioFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          findMany: {
-            args: Prisma.UsuarioFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>[]
-          }
-          create: {
-            args: Prisma.UsuarioCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          createMany: {
-            args: Prisma.UsuarioCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.UsuarioDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          update: {
-            args: Prisma.UsuarioUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          deleteMany: {
-            args: Prisma.UsuarioDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.UsuarioUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.UsuarioUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
-          }
-          aggregate: {
-            args: Prisma.UsuarioAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateUsuario>
-          }
-          groupBy: {
-            args: Prisma.UsuarioGroupByArgs<ExtArgs>
-            result: $Utils.Optional<UsuarioGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.UsuarioCountArgs<ExtArgs>
-            result: $Utils.Optional<UsuarioCountAggregateOutputType> | number
-          }
-        }
-      }
       Tipo_Produto_Insumo: {
         payload: Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>
         fields: Prisma.Tipo_Produto_InsumoFieldRefs
@@ -930,7 +848,6 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    usuario?: UsuarioOmit
     tipo_Produto_Insumo?: Tipo_Produto_InsumoOmit
     movimentacao?: MovimentacaoOmit
   }
@@ -1022,1051 +939,40 @@ export namespace Prisma {
    */
 
 
+  /**
+   * Count Type Tipo_Produto_InsumoCountOutputType
+   */
+
+  export type Tipo_Produto_InsumoCountOutputType = {
+    movimentacoes: number
+  }
+
+  export type Tipo_Produto_InsumoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    movimentacoes?: boolean | Tipo_Produto_InsumoCountOutputTypeCountMovimentacoesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Tipo_Produto_InsumoCountOutputType without action
+   */
+  export type Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tipo_Produto_InsumoCountOutputType
+     */
+    select?: Tipo_Produto_InsumoCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Tipo_Produto_InsumoCountOutputType without action
+   */
+  export type Tipo_Produto_InsumoCountOutputTypeCountMovimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MovimentacaoWhereInput
+  }
+
 
   /**
    * Models
    */
-
-  /**
-   * Model Usuario
-   */
-
-  export type AggregateUsuario = {
-    _count: UsuarioCountAggregateOutputType | null
-    _avg: UsuarioAvgAggregateOutputType | null
-    _sum: UsuarioSumAggregateOutputType | null
-    _min: UsuarioMinAggregateOutputType | null
-    _max: UsuarioMaxAggregateOutputType | null
-  }
-
-  export type UsuarioAvgAggregateOutputType = {
-    id: number | null
-    tipo_de_usuario: number | null
-  }
-
-  export type UsuarioSumAggregateOutputType = {
-    id: number | null
-    tipo_de_usuario: number | null
-  }
-
-  export type UsuarioMinAggregateOutputType = {
-    id: number | null
-    nome: string | null
-    data_de_nascimento: string | null
-    cpf: string | null
-    rg: string | null
-    email: string | null
-    tipo_de_usuario: number | null
-    rua: string | null
-    numero: string | null
-    bairro: string | null
-    cidade: string | null
-    uf: string | null
-    senha: string | null
-    telefone: string | null
-    criado_em: Date | null
-    criado_por: string | null
-  }
-
-  export type UsuarioMaxAggregateOutputType = {
-    id: number | null
-    nome: string | null
-    data_de_nascimento: string | null
-    cpf: string | null
-    rg: string | null
-    email: string | null
-    tipo_de_usuario: number | null
-    rua: string | null
-    numero: string | null
-    bairro: string | null
-    cidade: string | null
-    uf: string | null
-    senha: string | null
-    telefone: string | null
-    criado_em: Date | null
-    criado_por: string | null
-  }
-
-  export type UsuarioCountAggregateOutputType = {
-    id: number
-    nome: number
-    data_de_nascimento: number
-    cpf: number
-    rg: number
-    email: number
-    tipo_de_usuario: number
-    rua: number
-    numero: number
-    bairro: number
-    cidade: number
-    uf: number
-    senha: number
-    telefone: number
-    criado_em: number
-    criado_por: number
-    _all: number
-  }
-
-
-  export type UsuarioAvgAggregateInputType = {
-    id?: true
-    tipo_de_usuario?: true
-  }
-
-  export type UsuarioSumAggregateInputType = {
-    id?: true
-    tipo_de_usuario?: true
-  }
-
-  export type UsuarioMinAggregateInputType = {
-    id?: true
-    nome?: true
-    data_de_nascimento?: true
-    cpf?: true
-    rg?: true
-    email?: true
-    tipo_de_usuario?: true
-    rua?: true
-    numero?: true
-    bairro?: true
-    cidade?: true
-    uf?: true
-    senha?: true
-    telefone?: true
-    criado_em?: true
-    criado_por?: true
-  }
-
-  export type UsuarioMaxAggregateInputType = {
-    id?: true
-    nome?: true
-    data_de_nascimento?: true
-    cpf?: true
-    rg?: true
-    email?: true
-    tipo_de_usuario?: true
-    rua?: true
-    numero?: true
-    bairro?: true
-    cidade?: true
-    uf?: true
-    senha?: true
-    telefone?: true
-    criado_em?: true
-    criado_por?: true
-  }
-
-  export type UsuarioCountAggregateInputType = {
-    id?: true
-    nome?: true
-    data_de_nascimento?: true
-    cpf?: true
-    rg?: true
-    email?: true
-    tipo_de_usuario?: true
-    rua?: true
-    numero?: true
-    bairro?: true
-    cidade?: true
-    uf?: true
-    senha?: true
-    telefone?: true
-    criado_em?: true
-    criado_por?: true
-    _all?: true
-  }
-
-  export type UsuarioAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Usuario to aggregate.
-     */
-    where?: UsuarioWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Usuarios to fetch.
-     */
-    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: UsuarioWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Usuarios from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Usuarios.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Usuarios
-    **/
-    _count?: true | UsuarioCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: UsuarioAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: UsuarioSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: UsuarioMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: UsuarioMaxAggregateInputType
-  }
-
-  export type GetUsuarioAggregateType<T extends UsuarioAggregateArgs> = {
-        [P in keyof T & keyof AggregateUsuario]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateUsuario[P]>
-      : GetScalarType<T[P], AggregateUsuario[P]>
-  }
-
-
-
-
-  export type UsuarioGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UsuarioWhereInput
-    orderBy?: UsuarioOrderByWithAggregationInput | UsuarioOrderByWithAggregationInput[]
-    by: UsuarioScalarFieldEnum[] | UsuarioScalarFieldEnum
-    having?: UsuarioScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: UsuarioCountAggregateInputType | true
-    _avg?: UsuarioAvgAggregateInputType
-    _sum?: UsuarioSumAggregateInputType
-    _min?: UsuarioMinAggregateInputType
-    _max?: UsuarioMaxAggregateInputType
-  }
-
-  export type UsuarioGroupByOutputType = {
-    id: number
-    nome: string
-    data_de_nascimento: string
-    cpf: string
-    rg: string
-    email: string
-    tipo_de_usuario: number
-    rua: string
-    numero: string
-    bairro: string
-    cidade: string
-    uf: string
-    senha: string
-    telefone: string
-    criado_em: Date
-    criado_por: string
-    _count: UsuarioCountAggregateOutputType | null
-    _avg: UsuarioAvgAggregateOutputType | null
-    _sum: UsuarioSumAggregateOutputType | null
-    _min: UsuarioMinAggregateOutputType | null
-    _max: UsuarioMaxAggregateOutputType | null
-  }
-
-  type GetUsuarioGroupByPayload<T extends UsuarioGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<UsuarioGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof UsuarioGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], UsuarioGroupByOutputType[P]>
-            : GetScalarType<T[P], UsuarioGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type UsuarioSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    nome?: boolean
-    data_de_nascimento?: boolean
-    cpf?: boolean
-    rg?: boolean
-    email?: boolean
-    tipo_de_usuario?: boolean
-    rua?: boolean
-    numero?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    uf?: boolean
-    senha?: boolean
-    telefone?: boolean
-    criado_em?: boolean
-    criado_por?: boolean
-  }, ExtArgs["result"]["usuario"]>
-
-
-
-  export type UsuarioSelectScalar = {
-    id?: boolean
-    nome?: boolean
-    data_de_nascimento?: boolean
-    cpf?: boolean
-    rg?: boolean
-    email?: boolean
-    tipo_de_usuario?: boolean
-    rua?: boolean
-    numero?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    uf?: boolean
-    senha?: boolean
-    telefone?: boolean
-    criado_em?: boolean
-    criado_por?: boolean
-  }
-
-  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_de_nascimento" | "cpf" | "rg" | "email" | "tipo_de_usuario" | "rua" | "numero" | "bairro" | "cidade" | "uf" | "senha" | "telefone" | "criado_em" | "criado_por", ExtArgs["result"]["usuario"]>
-
-  export type $UsuarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Usuario"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      nome: string
-      data_de_nascimento: string
-      cpf: string
-      rg: string
-      email: string
-      tipo_de_usuario: number
-      rua: string
-      numero: string
-      bairro: string
-      cidade: string
-      uf: string
-      senha: string
-      telefone: string
-      criado_em: Date
-      criado_por: string
-    }, ExtArgs["result"]["usuario"]>
-    composites: {}
-  }
-
-  type UsuarioGetPayload<S extends boolean | null | undefined | UsuarioDefaultArgs> = $Result.GetResult<Prisma.$UsuarioPayload, S>
-
-  type UsuarioCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UsuarioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: UsuarioCountAggregateInputType | true
-    }
-
-  export interface UsuarioDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Usuario'], meta: { name: 'Usuario' } }
-    /**
-     * Find zero or one Usuario that matches the filter.
-     * @param {UsuarioFindUniqueArgs} args - Arguments to find a Usuario
-     * @example
-     * // Get one Usuario
-     * const usuario = await prisma.usuario.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends UsuarioFindUniqueArgs>(args: SelectSubset<T, UsuarioFindUniqueArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Usuario that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {UsuarioFindUniqueOrThrowArgs} args - Arguments to find a Usuario
-     * @example
-     * // Get one Usuario
-     * const usuario = await prisma.usuario.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends UsuarioFindUniqueOrThrowArgs>(args: SelectSubset<T, UsuarioFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Usuario that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioFindFirstArgs} args - Arguments to find a Usuario
-     * @example
-     * // Get one Usuario
-     * const usuario = await prisma.usuario.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends UsuarioFindFirstArgs>(args?: SelectSubset<T, UsuarioFindFirstArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Usuario that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioFindFirstOrThrowArgs} args - Arguments to find a Usuario
-     * @example
-     * // Get one Usuario
-     * const usuario = await prisma.usuario.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends UsuarioFindFirstOrThrowArgs>(args?: SelectSubset<T, UsuarioFindFirstOrThrowArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Usuarios that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Usuarios
-     * const usuarios = await prisma.usuario.findMany()
-     * 
-     * // Get first 10 Usuarios
-     * const usuarios = await prisma.usuario.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const usuarioWithIdOnly = await prisma.usuario.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends UsuarioFindManyArgs>(args?: SelectSubset<T, UsuarioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Usuario.
-     * @param {UsuarioCreateArgs} args - Arguments to create a Usuario.
-     * @example
-     * // Create one Usuario
-     * const Usuario = await prisma.usuario.create({
-     *   data: {
-     *     // ... data to create a Usuario
-     *   }
-     * })
-     * 
-     */
-    create<T extends UsuarioCreateArgs>(args: SelectSubset<T, UsuarioCreateArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Usuarios.
-     * @param {UsuarioCreateManyArgs} args - Arguments to create many Usuarios.
-     * @example
-     * // Create many Usuarios
-     * const usuario = await prisma.usuario.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends UsuarioCreateManyArgs>(args?: SelectSubset<T, UsuarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Usuario.
-     * @param {UsuarioDeleteArgs} args - Arguments to delete one Usuario.
-     * @example
-     * // Delete one Usuario
-     * const Usuario = await prisma.usuario.delete({
-     *   where: {
-     *     // ... filter to delete one Usuario
-     *   }
-     * })
-     * 
-     */
-    delete<T extends UsuarioDeleteArgs>(args: SelectSubset<T, UsuarioDeleteArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Usuario.
-     * @param {UsuarioUpdateArgs} args - Arguments to update one Usuario.
-     * @example
-     * // Update one Usuario
-     * const usuario = await prisma.usuario.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends UsuarioUpdateArgs>(args: SelectSubset<T, UsuarioUpdateArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Usuarios.
-     * @param {UsuarioDeleteManyArgs} args - Arguments to filter Usuarios to delete.
-     * @example
-     * // Delete a few Usuarios
-     * const { count } = await prisma.usuario.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends UsuarioDeleteManyArgs>(args?: SelectSubset<T, UsuarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Usuarios.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Usuarios
-     * const usuario = await prisma.usuario.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends UsuarioUpdateManyArgs>(args: SelectSubset<T, UsuarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Usuario.
-     * @param {UsuarioUpsertArgs} args - Arguments to update or create a Usuario.
-     * @example
-     * // Update or create a Usuario
-     * const usuario = await prisma.usuario.upsert({
-     *   create: {
-     *     // ... data to create a Usuario
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Usuario we want to update
-     *   }
-     * })
-     */
-    upsert<T extends UsuarioUpsertArgs>(args: SelectSubset<T, UsuarioUpsertArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Usuarios.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioCountArgs} args - Arguments to filter Usuarios to count.
-     * @example
-     * // Count the number of Usuarios
-     * const count = await prisma.usuario.count({
-     *   where: {
-     *     // ... the filter for the Usuarios we want to count
-     *   }
-     * })
-    **/
-    count<T extends UsuarioCountArgs>(
-      args?: Subset<T, UsuarioCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], UsuarioCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Usuario.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends UsuarioAggregateArgs>(args: Subset<T, UsuarioAggregateArgs>): Prisma.PrismaPromise<GetUsuarioAggregateType<T>>
-
-    /**
-     * Group by Usuario.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UsuarioGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends UsuarioGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UsuarioGroupByArgs['orderBy'] }
-        : { orderBy?: UsuarioGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, UsuarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsuarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Usuario model
-   */
-  readonly fields: UsuarioFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Usuario.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__UsuarioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Usuario model
-   */
-  interface UsuarioFieldRefs {
-    readonly id: FieldRef<"Usuario", 'Int'>
-    readonly nome: FieldRef<"Usuario", 'String'>
-    readonly data_de_nascimento: FieldRef<"Usuario", 'String'>
-    readonly cpf: FieldRef<"Usuario", 'String'>
-    readonly rg: FieldRef<"Usuario", 'String'>
-    readonly email: FieldRef<"Usuario", 'String'>
-    readonly tipo_de_usuario: FieldRef<"Usuario", 'Int'>
-    readonly rua: FieldRef<"Usuario", 'String'>
-    readonly numero: FieldRef<"Usuario", 'String'>
-    readonly bairro: FieldRef<"Usuario", 'String'>
-    readonly cidade: FieldRef<"Usuario", 'String'>
-    readonly uf: FieldRef<"Usuario", 'String'>
-    readonly senha: FieldRef<"Usuario", 'String'>
-    readonly telefone: FieldRef<"Usuario", 'String'>
-    readonly criado_em: FieldRef<"Usuario", 'DateTime'>
-    readonly criado_por: FieldRef<"Usuario", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Usuario findUnique
-   */
-  export type UsuarioFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter, which Usuario to fetch.
-     */
-    where: UsuarioWhereUniqueInput
-  }
-
-  /**
-   * Usuario findUniqueOrThrow
-   */
-  export type UsuarioFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter, which Usuario to fetch.
-     */
-    where: UsuarioWhereUniqueInput
-  }
-
-  /**
-   * Usuario findFirst
-   */
-  export type UsuarioFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter, which Usuario to fetch.
-     */
-    where?: UsuarioWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Usuarios to fetch.
-     */
-    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Usuarios.
-     */
-    cursor?: UsuarioWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Usuarios from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Usuarios.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Usuarios.
-     */
-    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
-  }
-
-  /**
-   * Usuario findFirstOrThrow
-   */
-  export type UsuarioFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter, which Usuario to fetch.
-     */
-    where?: UsuarioWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Usuarios to fetch.
-     */
-    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Usuarios.
-     */
-    cursor?: UsuarioWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Usuarios from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Usuarios.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Usuarios.
-     */
-    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
-  }
-
-  /**
-   * Usuario findMany
-   */
-  export type UsuarioFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter, which Usuarios to fetch.
-     */
-    where?: UsuarioWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Usuarios to fetch.
-     */
-    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Usuarios.
-     */
-    cursor?: UsuarioWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Usuarios from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Usuarios.
-     */
-    skip?: number
-    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
-  }
-
-  /**
-   * Usuario create
-   */
-  export type UsuarioCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * The data needed to create a Usuario.
-     */
-    data: XOR<UsuarioCreateInput, UsuarioUncheckedCreateInput>
-  }
-
-  /**
-   * Usuario createMany
-   */
-  export type UsuarioCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Usuarios.
-     */
-    data: UsuarioCreateManyInput | UsuarioCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Usuario update
-   */
-  export type UsuarioUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * The data needed to update a Usuario.
-     */
-    data: XOR<UsuarioUpdateInput, UsuarioUncheckedUpdateInput>
-    /**
-     * Choose, which Usuario to update.
-     */
-    where: UsuarioWhereUniqueInput
-  }
-
-  /**
-   * Usuario updateMany
-   */
-  export type UsuarioUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Usuarios.
-     */
-    data: XOR<UsuarioUpdateManyMutationInput, UsuarioUncheckedUpdateManyInput>
-    /**
-     * Filter which Usuarios to update
-     */
-    where?: UsuarioWhereInput
-    /**
-     * Limit how many Usuarios to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Usuario upsert
-   */
-  export type UsuarioUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * The filter to search for the Usuario to update in case it exists.
-     */
-    where: UsuarioWhereUniqueInput
-    /**
-     * In case the Usuario found by the `where` argument doesn't exist, create a new Usuario with this data.
-     */
-    create: XOR<UsuarioCreateInput, UsuarioUncheckedCreateInput>
-    /**
-     * In case the Usuario was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<UsuarioUpdateInput, UsuarioUncheckedUpdateInput>
-  }
-
-  /**
-   * Usuario delete
-   */
-  export type UsuarioDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-    /**
-     * Filter which Usuario to delete.
-     */
-    where: UsuarioWhereUniqueInput
-  }
-
-  /**
-   * Usuario deleteMany
-   */
-  export type UsuarioDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Usuarios to delete
-     */
-    where?: UsuarioWhereInput
-    /**
-     * Limit how many Usuarios to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Usuario without action
-   */
-  export type UsuarioDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Usuario
-     */
-    select?: UsuarioSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Usuario
-     */
-    omit?: UsuarioOmit<ExtArgs> | null
-  }
-
 
   /**
    * Model Tipo_Produto_Insumo
@@ -2270,6 +1176,8 @@ export namespace Prisma {
     quantidade?: boolean
     fornecedor?: boolean
     tipo_de_produto?: boolean
+    movimentacoes?: boolean | Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>
+    _count?: boolean | Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tipo_Produto_Insumo"]>
 
 
@@ -2283,10 +1191,16 @@ export namespace Prisma {
   }
 
   export type Tipo_Produto_InsumoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tipo_de_insumo" | "quantidade" | "fornecedor" | "tipo_de_produto", ExtArgs["result"]["tipo_Produto_Insumo"]>
+  export type Tipo_Produto_InsumoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    movimentacoes?: boolean | Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>
+    _count?: boolean | Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
+  }
 
   export type $Tipo_Produto_InsumoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Tipo_Produto_Insumo"
-    objects: {}
+    objects: {
+      movimentacoes: Prisma.$MovimentacaoPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       tipo_de_insumo: string
@@ -2633,6 +1547,7 @@ export namespace Prisma {
    */
   export interface Prisma__Tipo_Produto_InsumoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    movimentacoes<T extends Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs> = {}>(args?: Subset<T, Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MovimentacaoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2684,6 +1599,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * Filter, which Tipo_Produto_Insumo to fetch.
      */
     where: Tipo_Produto_InsumoWhereUniqueInput
@@ -2702,6 +1621,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * Filter, which Tipo_Produto_Insumo to fetch.
      */
     where: Tipo_Produto_InsumoWhereUniqueInput
@@ -2719,6 +1642,10 @@ export namespace Prisma {
      * Omit specific fields from the Tipo_Produto_Insumo
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
     /**
      * Filter, which Tipo_Produto_Insumo to fetch.
      */
@@ -2768,6 +1695,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * Filter, which Tipo_Produto_Insumo to fetch.
      */
     where?: Tipo_Produto_InsumoWhereInput
@@ -2816,6 +1747,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * Filter, which Tipo_Produto_Insumos to fetch.
      */
     where?: Tipo_Produto_InsumoWhereInput
@@ -2859,6 +1794,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * The data needed to create a Tipo_Produto_Insumo.
      */
     data: XOR<Tipo_Produto_InsumoCreateInput, Tipo_Produto_InsumoUncheckedCreateInput>
@@ -2887,6 +1826,10 @@ export namespace Prisma {
      * Omit specific fields from the Tipo_Produto_Insumo
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
     /**
      * The data needed to update a Tipo_Produto_Insumo.
      */
@@ -2928,6 +1871,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * The filter to search for the Tipo_Produto_Insumo to update in case it exists.
      */
     where: Tipo_Produto_InsumoWhereUniqueInput
@@ -2954,6 +1901,10 @@ export namespace Prisma {
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    /**
      * Filter which Tipo_Produto_Insumo to delete.
      */
     where: Tipo_Produto_InsumoWhereUniqueInput
@@ -2974,6 +1925,30 @@ export namespace Prisma {
   }
 
   /**
+   * Tipo_Produto_Insumo.movimentacoes
+   */
+  export type Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Movimentacao
+     */
+    select?: MovimentacaoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Movimentacao
+     */
+    omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    where?: MovimentacaoWhereInput
+    orderBy?: MovimentacaoOrderByWithRelationInput | MovimentacaoOrderByWithRelationInput[]
+    cursor?: MovimentacaoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MovimentacaoScalarFieldEnum | MovimentacaoScalarFieldEnum[]
+  }
+
+  /**
    * Tipo_Produto_Insumo without action
    */
   export type Tipo_Produto_InsumoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2985,6 +1960,10 @@ export namespace Prisma {
      * Omit specific fields from the Tipo_Produto_Insumo
      */
     omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
   }
 
 
@@ -3002,44 +1981,40 @@ export namespace Prisma {
 
   export type MovimentacaoAvgAggregateOutputType = {
     id: number | null
-    id_do_usuario: number | null
-    id_do_insumo: number | null
-    id_do_produto: number | null
+    id_insumo_produto: number | null
     quantidade: number | null
   }
 
   export type MovimentacaoSumAggregateOutputType = {
     id: number | null
-    id_do_usuario: number | null
-    id_do_insumo: number | null
-    id_do_produto: number | null
+    id_insumo_produto: number | null
     quantidade: number | null
   }
 
   export type MovimentacaoMinAggregateOutputType = {
     id: number | null
-    id_do_usuario: number | null
-    id_do_insumo: number | null
-    id_do_produto: number | null
+    id_insumo_produto: number | null
     quantidade: number | null
+    tipo_movimentacao: string | null
+    tipo: string | null
     date: Date | null
   }
 
   export type MovimentacaoMaxAggregateOutputType = {
     id: number | null
-    id_do_usuario: number | null
-    id_do_insumo: number | null
-    id_do_produto: number | null
+    id_insumo_produto: number | null
     quantidade: number | null
+    tipo_movimentacao: string | null
+    tipo: string | null
     date: Date | null
   }
 
   export type MovimentacaoCountAggregateOutputType = {
     id: number
-    id_do_usuario: number
-    id_do_insumo: number
-    id_do_produto: number
+    id_insumo_produto: number
     quantidade: number
+    tipo_movimentacao: number
+    tipo: number
     date: number
     _all: number
   }
@@ -3047,44 +2022,40 @@ export namespace Prisma {
 
   export type MovimentacaoAvgAggregateInputType = {
     id?: true
-    id_do_usuario?: true
-    id_do_insumo?: true
-    id_do_produto?: true
+    id_insumo_produto?: true
     quantidade?: true
   }
 
   export type MovimentacaoSumAggregateInputType = {
     id?: true
-    id_do_usuario?: true
-    id_do_insumo?: true
-    id_do_produto?: true
+    id_insumo_produto?: true
     quantidade?: true
   }
 
   export type MovimentacaoMinAggregateInputType = {
     id?: true
-    id_do_usuario?: true
-    id_do_insumo?: true
-    id_do_produto?: true
+    id_insumo_produto?: true
     quantidade?: true
+    tipo_movimentacao?: true
+    tipo?: true
     date?: true
   }
 
   export type MovimentacaoMaxAggregateInputType = {
     id?: true
-    id_do_usuario?: true
-    id_do_insumo?: true
-    id_do_produto?: true
+    id_insumo_produto?: true
     quantidade?: true
+    tipo_movimentacao?: true
+    tipo?: true
     date?: true
   }
 
   export type MovimentacaoCountAggregateInputType = {
     id?: true
-    id_do_usuario?: true
-    id_do_insumo?: true
-    id_do_produto?: true
+    id_insumo_produto?: true
     quantidade?: true
+    tipo_movimentacao?: true
+    tipo?: true
     date?: true
     _all?: true
   }
@@ -3177,10 +2148,10 @@ export namespace Prisma {
 
   export type MovimentacaoGroupByOutputType = {
     id: number
-    id_do_usuario: number
-    id_do_insumo: number
-    id_do_produto: number
+    id_insumo_produto: number
     quantidade: number
+    tipo_movimentacao: string
+    tipo: string
     date: Date
     _count: MovimentacaoCountAggregateOutputType | null
     _avg: MovimentacaoAvgAggregateOutputType | null
@@ -3205,35 +2176,41 @@ export namespace Prisma {
 
   export type MovimentacaoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    id_do_usuario?: boolean
-    id_do_insumo?: boolean
-    id_do_produto?: boolean
+    id_insumo_produto?: boolean
     quantidade?: boolean
+    tipo_movimentacao?: boolean
+    tipo?: boolean
     date?: boolean
+    tpi?: boolean | Tipo_Produto_InsumoDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["movimentacao"]>
 
 
 
   export type MovimentacaoSelectScalar = {
     id?: boolean
-    id_do_usuario?: boolean
-    id_do_insumo?: boolean
-    id_do_produto?: boolean
+    id_insumo_produto?: boolean
     quantidade?: boolean
+    tipo_movimentacao?: boolean
+    tipo?: boolean
     date?: boolean
   }
 
-  export type MovimentacaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_do_usuario" | "id_do_insumo" | "id_do_produto" | "quantidade" | "date", ExtArgs["result"]["movimentacao"]>
+  export type MovimentacaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_insumo_produto" | "quantidade" | "tipo_movimentacao" | "tipo" | "date", ExtArgs["result"]["movimentacao"]>
+  export type MovimentacaoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tpi?: boolean | Tipo_Produto_InsumoDefaultArgs<ExtArgs>
+  }
 
   export type $MovimentacaoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Movimentacao"
-    objects: {}
+    objects: {
+      tpi: Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      id_do_usuario: number
-      id_do_insumo: number
-      id_do_produto: number
+      id_insumo_produto: number
       quantidade: number
+      tipo_movimentacao: string
+      tipo: string
       date: Date
     }, ExtArgs["result"]["movimentacao"]>
     composites: {}
@@ -3575,6 +2552,7 @@ export namespace Prisma {
    */
   export interface Prisma__MovimentacaoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    tpi<T extends Tipo_Produto_InsumoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Tipo_Produto_InsumoDefaultArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3605,10 +2583,10 @@ export namespace Prisma {
    */
   interface MovimentacaoFieldRefs {
     readonly id: FieldRef<"Movimentacao", 'Int'>
-    readonly id_do_usuario: FieldRef<"Movimentacao", 'Int'>
-    readonly id_do_insumo: FieldRef<"Movimentacao", 'Int'>
-    readonly id_do_produto: FieldRef<"Movimentacao", 'Int'>
+    readonly id_insumo_produto: FieldRef<"Movimentacao", 'Int'>
     readonly quantidade: FieldRef<"Movimentacao", 'Int'>
+    readonly tipo_movimentacao: FieldRef<"Movimentacao", 'String'>
+    readonly tipo: FieldRef<"Movimentacao", 'String'>
     readonly date: FieldRef<"Movimentacao", 'DateTime'>
   }
     
@@ -3626,6 +2604,10 @@ export namespace Prisma {
      * Omit specific fields from the Movimentacao
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
     /**
      * Filter, which Movimentacao to fetch.
      */
@@ -3645,6 +2627,10 @@ export namespace Prisma {
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    /**
      * Filter, which Movimentacao to fetch.
      */
     where: MovimentacaoWhereUniqueInput
@@ -3662,6 +2648,10 @@ export namespace Prisma {
      * Omit specific fields from the Movimentacao
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
     /**
      * Filter, which Movimentacao to fetch.
      */
@@ -3711,6 +2701,10 @@ export namespace Prisma {
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    /**
      * Filter, which Movimentacao to fetch.
      */
     where?: MovimentacaoWhereInput
@@ -3759,6 +2753,10 @@ export namespace Prisma {
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    /**
      * Filter, which Movimentacaos to fetch.
      */
     where?: MovimentacaoWhereInput
@@ -3802,6 +2800,10 @@ export namespace Prisma {
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    /**
      * The data needed to create a Movimentacao.
      */
     data: XOR<MovimentacaoCreateInput, MovimentacaoUncheckedCreateInput>
@@ -3830,6 +2832,10 @@ export namespace Prisma {
      * Omit specific fields from the Movimentacao
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
     /**
      * The data needed to update a Movimentacao.
      */
@@ -3871,6 +2877,10 @@ export namespace Prisma {
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
+    /**
      * The filter to search for the Movimentacao to update in case it exists.
      */
     where: MovimentacaoWhereUniqueInput
@@ -3896,6 +2906,10 @@ export namespace Prisma {
      * Omit specific fields from the Movimentacao
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
     /**
      * Filter which Movimentacao to delete.
      */
@@ -3928,6 +2942,10 @@ export namespace Prisma {
      * Omit specific fields from the Movimentacao
      */
     omit?: MovimentacaoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MovimentacaoInclude<ExtArgs> | null
   }
 
 
@@ -3945,28 +2963,6 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const UsuarioScalarFieldEnum: {
-    id: 'id',
-    nome: 'nome',
-    data_de_nascimento: 'data_de_nascimento',
-    cpf: 'cpf',
-    rg: 'rg',
-    email: 'email',
-    tipo_de_usuario: 'tipo_de_usuario',
-    rua: 'rua',
-    numero: 'numero',
-    bairro: 'bairro',
-    cidade: 'cidade',
-    uf: 'uf',
-    senha: 'senha',
-    telefone: 'telefone',
-    criado_em: 'criado_em',
-    criado_por: 'criado_por'
-  };
-
-  export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]
-
-
   export const Tipo_Produto_InsumoScalarFieldEnum: {
     id: 'id',
     tipo_de_insumo: 'tipo_de_insumo',
@@ -3980,10 +2976,10 @@ export namespace Prisma {
 
   export const MovimentacaoScalarFieldEnum: {
     id: 'id',
-    id_do_usuario: 'id_do_usuario',
-    id_do_insumo: 'id_do_insumo',
-    id_do_produto: 'id_do_produto',
+    id_insumo_produto: 'id_insumo_produto',
     quantidade: 'quantidade',
+    tipo_movimentacao: 'tipo_movimentacao',
+    tipo: 'tipo',
     date: 'date'
   };
 
@@ -3998,25 +2994,6 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const UsuarioOrderByRelevanceFieldEnum: {
-    nome: 'nome',
-    data_de_nascimento: 'data_de_nascimento',
-    cpf: 'cpf',
-    rg: 'rg',
-    email: 'email',
-    rua: 'rua',
-    numero: 'numero',
-    bairro: 'bairro',
-    cidade: 'cidade',
-    uf: 'uf',
-    senha: 'senha',
-    telefone: 'telefone',
-    criado_por: 'criado_por'
-  };
-
-  export type UsuarioOrderByRelevanceFieldEnum = (typeof UsuarioOrderByRelevanceFieldEnum)[keyof typeof UsuarioOrderByRelevanceFieldEnum]
-
-
   export const Tipo_Produto_InsumoOrderByRelevanceFieldEnum: {
     tipo_de_insumo: 'tipo_de_insumo',
     fornecedor: 'fornecedor',
@@ -4024,6 +3001,14 @@ export namespace Prisma {
   };
 
   export type Tipo_Produto_InsumoOrderByRelevanceFieldEnum = (typeof Tipo_Produto_InsumoOrderByRelevanceFieldEnum)[keyof typeof Tipo_Produto_InsumoOrderByRelevanceFieldEnum]
+
+
+  export const MovimentacaoOrderByRelevanceFieldEnum: {
+    tipo_movimentacao: 'tipo_movimentacao',
+    tipo: 'tipo'
+  };
+
+  export type MovimentacaoOrderByRelevanceFieldEnum = (typeof MovimentacaoOrderByRelevanceFieldEnum)[keyof typeof MovimentacaoOrderByRelevanceFieldEnum]
 
 
   /**
@@ -4062,116 +3047,6 @@ export namespace Prisma {
    */
 
 
-  export type UsuarioWhereInput = {
-    AND?: UsuarioWhereInput | UsuarioWhereInput[]
-    OR?: UsuarioWhereInput[]
-    NOT?: UsuarioWhereInput | UsuarioWhereInput[]
-    id?: IntFilter<"Usuario"> | number
-    nome?: StringFilter<"Usuario"> | string
-    data_de_nascimento?: StringFilter<"Usuario"> | string
-    cpf?: StringFilter<"Usuario"> | string
-    rg?: StringFilter<"Usuario"> | string
-    email?: StringFilter<"Usuario"> | string
-    tipo_de_usuario?: IntFilter<"Usuario"> | number
-    rua?: StringFilter<"Usuario"> | string
-    numero?: StringFilter<"Usuario"> | string
-    bairro?: StringFilter<"Usuario"> | string
-    cidade?: StringFilter<"Usuario"> | string
-    uf?: StringFilter<"Usuario"> | string
-    senha?: StringFilter<"Usuario"> | string
-    telefone?: StringFilter<"Usuario"> | string
-    criado_em?: DateTimeFilter<"Usuario"> | Date | string
-    criado_por?: StringFilter<"Usuario"> | string
-  }
-
-  export type UsuarioOrderByWithRelationInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    data_de_nascimento?: SortOrder
-    cpf?: SortOrder
-    rg?: SortOrder
-    email?: SortOrder
-    tipo_de_usuario?: SortOrder
-    rua?: SortOrder
-    numero?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    uf?: SortOrder
-    senha?: SortOrder
-    telefone?: SortOrder
-    criado_em?: SortOrder
-    criado_por?: SortOrder
-    _relevance?: UsuarioOrderByRelevanceInput
-  }
-
-  export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: UsuarioWhereInput | UsuarioWhereInput[]
-    OR?: UsuarioWhereInput[]
-    NOT?: UsuarioWhereInput | UsuarioWhereInput[]
-    nome?: StringFilter<"Usuario"> | string
-    data_de_nascimento?: StringFilter<"Usuario"> | string
-    cpf?: StringFilter<"Usuario"> | string
-    rg?: StringFilter<"Usuario"> | string
-    email?: StringFilter<"Usuario"> | string
-    tipo_de_usuario?: IntFilter<"Usuario"> | number
-    rua?: StringFilter<"Usuario"> | string
-    numero?: StringFilter<"Usuario"> | string
-    bairro?: StringFilter<"Usuario"> | string
-    cidade?: StringFilter<"Usuario"> | string
-    uf?: StringFilter<"Usuario"> | string
-    senha?: StringFilter<"Usuario"> | string
-    telefone?: StringFilter<"Usuario"> | string
-    criado_em?: DateTimeFilter<"Usuario"> | Date | string
-    criado_por?: StringFilter<"Usuario"> | string
-  }, "id">
-
-  export type UsuarioOrderByWithAggregationInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    data_de_nascimento?: SortOrder
-    cpf?: SortOrder
-    rg?: SortOrder
-    email?: SortOrder
-    tipo_de_usuario?: SortOrder
-    rua?: SortOrder
-    numero?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    uf?: SortOrder
-    senha?: SortOrder
-    telefone?: SortOrder
-    criado_em?: SortOrder
-    criado_por?: SortOrder
-    _count?: UsuarioCountOrderByAggregateInput
-    _avg?: UsuarioAvgOrderByAggregateInput
-    _max?: UsuarioMaxOrderByAggregateInput
-    _min?: UsuarioMinOrderByAggregateInput
-    _sum?: UsuarioSumOrderByAggregateInput
-  }
-
-  export type UsuarioScalarWhereWithAggregatesInput = {
-    AND?: UsuarioScalarWhereWithAggregatesInput | UsuarioScalarWhereWithAggregatesInput[]
-    OR?: UsuarioScalarWhereWithAggregatesInput[]
-    NOT?: UsuarioScalarWhereWithAggregatesInput | UsuarioScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Usuario"> | number
-    nome?: StringWithAggregatesFilter<"Usuario"> | string
-    data_de_nascimento?: StringWithAggregatesFilter<"Usuario"> | string
-    cpf?: StringWithAggregatesFilter<"Usuario"> | string
-    rg?: StringWithAggregatesFilter<"Usuario"> | string
-    email?: StringWithAggregatesFilter<"Usuario"> | string
-    tipo_de_usuario?: IntWithAggregatesFilter<"Usuario"> | number
-    rua?: StringWithAggregatesFilter<"Usuario"> | string
-    numero?: StringWithAggregatesFilter<"Usuario"> | string
-    bairro?: StringWithAggregatesFilter<"Usuario"> | string
-    cidade?: StringWithAggregatesFilter<"Usuario"> | string
-    uf?: StringWithAggregatesFilter<"Usuario"> | string
-    senha?: StringWithAggregatesFilter<"Usuario"> | string
-    telefone?: StringWithAggregatesFilter<"Usuario"> | string
-    criado_em?: DateTimeWithAggregatesFilter<"Usuario"> | Date | string
-    criado_por?: StringWithAggregatesFilter<"Usuario"> | string
-  }
-
   export type Tipo_Produto_InsumoWhereInput = {
     AND?: Tipo_Produto_InsumoWhereInput | Tipo_Produto_InsumoWhereInput[]
     OR?: Tipo_Produto_InsumoWhereInput[]
@@ -4181,6 +3056,7 @@ export namespace Prisma {
     quantidade?: IntFilter<"Tipo_Produto_Insumo"> | number
     fornecedor?: StringFilter<"Tipo_Produto_Insumo"> | string
     tipo_de_produto?: StringFilter<"Tipo_Produto_Insumo"> | string
+    movimentacoes?: MovimentacaoListRelationFilter
   }
 
   export type Tipo_Produto_InsumoOrderByWithRelationInput = {
@@ -4189,6 +3065,7 @@ export namespace Prisma {
     quantidade?: SortOrder
     fornecedor?: SortOrder
     tipo_de_produto?: SortOrder
+    movimentacoes?: MovimentacaoOrderByRelationAggregateInput
     _relevance?: Tipo_Produto_InsumoOrderByRelevanceInput
   }
 
@@ -4201,6 +3078,7 @@ export namespace Prisma {
     quantidade?: IntFilter<"Tipo_Produto_Insumo"> | number
     fornecedor?: StringFilter<"Tipo_Produto_Insumo"> | string
     tipo_de_produto?: StringFilter<"Tipo_Produto_Insumo"> | string
+    movimentacoes?: MovimentacaoListRelationFilter
   }, "id">
 
   export type Tipo_Produto_InsumoOrderByWithAggregationInput = {
@@ -4232,20 +3110,23 @@ export namespace Prisma {
     OR?: MovimentacaoWhereInput[]
     NOT?: MovimentacaoWhereInput | MovimentacaoWhereInput[]
     id?: IntFilter<"Movimentacao"> | number
-    id_do_usuario?: IntFilter<"Movimentacao"> | number
-    id_do_insumo?: IntFilter<"Movimentacao"> | number
-    id_do_produto?: IntFilter<"Movimentacao"> | number
+    id_insumo_produto?: IntFilter<"Movimentacao"> | number
     quantidade?: IntFilter<"Movimentacao"> | number
+    tipo_movimentacao?: StringFilter<"Movimentacao"> | string
+    tipo?: StringFilter<"Movimentacao"> | string
     date?: DateTimeFilter<"Movimentacao"> | Date | string
+    tpi?: XOR<Tipo_Produto_InsumoScalarRelationFilter, Tipo_Produto_InsumoWhereInput>
   }
 
   export type MovimentacaoOrderByWithRelationInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+    tipo_movimentacao?: SortOrder
+    tipo?: SortOrder
     date?: SortOrder
+    tpi?: Tipo_Produto_InsumoOrderByWithRelationInput
+    _relevance?: MovimentacaoOrderByRelevanceInput
   }
 
   export type MovimentacaoWhereUniqueInput = Prisma.AtLeast<{
@@ -4253,19 +3134,20 @@ export namespace Prisma {
     AND?: MovimentacaoWhereInput | MovimentacaoWhereInput[]
     OR?: MovimentacaoWhereInput[]
     NOT?: MovimentacaoWhereInput | MovimentacaoWhereInput[]
-    id_do_usuario?: IntFilter<"Movimentacao"> | number
-    id_do_insumo?: IntFilter<"Movimentacao"> | number
-    id_do_produto?: IntFilter<"Movimentacao"> | number
+    id_insumo_produto?: IntFilter<"Movimentacao"> | number
     quantidade?: IntFilter<"Movimentacao"> | number
+    tipo_movimentacao?: StringFilter<"Movimentacao"> | string
+    tipo?: StringFilter<"Movimentacao"> | string
     date?: DateTimeFilter<"Movimentacao"> | Date | string
+    tpi?: XOR<Tipo_Produto_InsumoScalarRelationFilter, Tipo_Produto_InsumoWhereInput>
   }, "id">
 
   export type MovimentacaoOrderByWithAggregationInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+    tipo_movimentacao?: SortOrder
+    tipo?: SortOrder
     date?: SortOrder
     _count?: MovimentacaoCountOrderByAggregateInput
     _avg?: MovimentacaoAvgOrderByAggregateInput
@@ -4279,141 +3161,11 @@ export namespace Prisma {
     OR?: MovimentacaoScalarWhereWithAggregatesInput[]
     NOT?: MovimentacaoScalarWhereWithAggregatesInput | MovimentacaoScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Movimentacao"> | number
-    id_do_usuario?: IntWithAggregatesFilter<"Movimentacao"> | number
-    id_do_insumo?: IntWithAggregatesFilter<"Movimentacao"> | number
-    id_do_produto?: IntWithAggregatesFilter<"Movimentacao"> | number
+    id_insumo_produto?: IntWithAggregatesFilter<"Movimentacao"> | number
     quantidade?: IntWithAggregatesFilter<"Movimentacao"> | number
+    tipo_movimentacao?: StringWithAggregatesFilter<"Movimentacao"> | string
+    tipo?: StringWithAggregatesFilter<"Movimentacao"> | string
     date?: DateTimeWithAggregatesFilter<"Movimentacao"> | Date | string
-  }
-
-  export type UsuarioCreateInput = {
-    nome: string
-    data_de_nascimento: string
-    cpf: string
-    rg: string
-    email: string
-    tipo_de_usuario: number
-    rua: string
-    numero: string
-    bairro: string
-    cidade: string
-    uf: string
-    senha: string
-    telefone: string
-    criado_em: Date | string
-    criado_por: string
-  }
-
-  export type UsuarioUncheckedCreateInput = {
-    id?: number
-    nome: string
-    data_de_nascimento: string
-    cpf: string
-    rg: string
-    email: string
-    tipo_de_usuario: number
-    rua: string
-    numero: string
-    bairro: string
-    cidade: string
-    uf: string
-    senha: string
-    telefone: string
-    criado_em: Date | string
-    criado_por: string
-  }
-
-  export type UsuarioUpdateInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    data_de_nascimento?: StringFieldUpdateOperationsInput | string
-    cpf?: StringFieldUpdateOperationsInput | string
-    rg?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    tipo_de_usuario?: IntFieldUpdateOperationsInput | number
-    rua?: StringFieldUpdateOperationsInput | string
-    numero?: StringFieldUpdateOperationsInput | string
-    bairro?: StringFieldUpdateOperationsInput | string
-    cidade?: StringFieldUpdateOperationsInput | string
-    uf?: StringFieldUpdateOperationsInput | string
-    senha?: StringFieldUpdateOperationsInput | string
-    telefone?: StringFieldUpdateOperationsInput | string
-    criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
-    criado_por?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type UsuarioUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    data_de_nascimento?: StringFieldUpdateOperationsInput | string
-    cpf?: StringFieldUpdateOperationsInput | string
-    rg?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    tipo_de_usuario?: IntFieldUpdateOperationsInput | number
-    rua?: StringFieldUpdateOperationsInput | string
-    numero?: StringFieldUpdateOperationsInput | string
-    bairro?: StringFieldUpdateOperationsInput | string
-    cidade?: StringFieldUpdateOperationsInput | string
-    uf?: StringFieldUpdateOperationsInput | string
-    senha?: StringFieldUpdateOperationsInput | string
-    telefone?: StringFieldUpdateOperationsInput | string
-    criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
-    criado_por?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type UsuarioCreateManyInput = {
-    id?: number
-    nome: string
-    data_de_nascimento: string
-    cpf: string
-    rg: string
-    email: string
-    tipo_de_usuario: number
-    rua: string
-    numero: string
-    bairro: string
-    cidade: string
-    uf: string
-    senha: string
-    telefone: string
-    criado_em: Date | string
-    criado_por: string
-  }
-
-  export type UsuarioUpdateManyMutationInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    data_de_nascimento?: StringFieldUpdateOperationsInput | string
-    cpf?: StringFieldUpdateOperationsInput | string
-    rg?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    tipo_de_usuario?: IntFieldUpdateOperationsInput | number
-    rua?: StringFieldUpdateOperationsInput | string
-    numero?: StringFieldUpdateOperationsInput | string
-    bairro?: StringFieldUpdateOperationsInput | string
-    cidade?: StringFieldUpdateOperationsInput | string
-    uf?: StringFieldUpdateOperationsInput | string
-    senha?: StringFieldUpdateOperationsInput | string
-    telefone?: StringFieldUpdateOperationsInput | string
-    criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
-    criado_por?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type UsuarioUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    data_de_nascimento?: StringFieldUpdateOperationsInput | string
-    cpf?: StringFieldUpdateOperationsInput | string
-    rg?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    tipo_de_usuario?: IntFieldUpdateOperationsInput | number
-    rua?: StringFieldUpdateOperationsInput | string
-    numero?: StringFieldUpdateOperationsInput | string
-    bairro?: StringFieldUpdateOperationsInput | string
-    cidade?: StringFieldUpdateOperationsInput | string
-    uf?: StringFieldUpdateOperationsInput | string
-    senha?: StringFieldUpdateOperationsInput | string
-    telefone?: StringFieldUpdateOperationsInput | string
-    criado_em?: DateTimeFieldUpdateOperationsInput | Date | string
-    criado_por?: StringFieldUpdateOperationsInput | string
   }
 
   export type Tipo_Produto_InsumoCreateInput = {
@@ -4421,6 +3173,7 @@ export namespace Prisma {
     quantidade: number
     fornecedor: string
     tipo_de_produto: string
+    movimentacoes?: MovimentacaoCreateNestedManyWithoutTpiInput
   }
 
   export type Tipo_Produto_InsumoUncheckedCreateInput = {
@@ -4429,6 +3182,7 @@ export namespace Prisma {
     quantidade: number
     fornecedor: string
     tipo_de_produto: string
+    movimentacoes?: MovimentacaoUncheckedCreateNestedManyWithoutTpiInput
   }
 
   export type Tipo_Produto_InsumoUpdateInput = {
@@ -4436,6 +3190,7 @@ export namespace Prisma {
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
     tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    movimentacoes?: MovimentacaoUpdateManyWithoutTpiNestedInput
   }
 
   export type Tipo_Produto_InsumoUncheckedUpdateInput = {
@@ -4444,6 +3199,7 @@ export namespace Prisma {
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
     tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    movimentacoes?: MovimentacaoUncheckedUpdateManyWithoutTpiNestedInput
   }
 
   export type Tipo_Produto_InsumoCreateManyInput = {
@@ -4470,62 +3226,61 @@ export namespace Prisma {
   }
 
   export type MovimentacaoCreateInput = {
-    id_do_usuario: number
-    id_do_insumo: number
-    id_do_produto: number
     quantidade: number
+    tipo_movimentacao: string
+    tipo: string
     date: Date | string
+    tpi: Tipo_Produto_InsumoCreateNestedOneWithoutMovimentacoesInput
   }
 
   export type MovimentacaoUncheckedCreateInput = {
     id?: number
-    id_do_usuario: number
-    id_do_insumo: number
-    id_do_produto: number
+    id_insumo_produto: number
     quantidade: number
+    tipo_movimentacao: string
+    tipo: string
     date: Date | string
   }
 
   export type MovimentacaoUpdateInput = {
-    id_do_usuario?: IntFieldUpdateOperationsInput | number
-    id_do_insumo?: IntFieldUpdateOperationsInput | number
-    id_do_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    tpi?: Tipo_Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput
   }
 
   export type MovimentacaoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    id_do_usuario?: IntFieldUpdateOperationsInput | number
-    id_do_insumo?: IntFieldUpdateOperationsInput | number
-    id_do_produto?: IntFieldUpdateOperationsInput | number
+    id_insumo_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MovimentacaoCreateManyInput = {
     id?: number
-    id_do_usuario: number
-    id_do_insumo: number
-    id_do_produto: number
+    id_insumo_produto: number
     quantidade: number
+    tipo_movimentacao: string
+    tipo: string
     date: Date | string
   }
 
   export type MovimentacaoUpdateManyMutationInput = {
-    id_do_usuario?: IntFieldUpdateOperationsInput | number
-    id_do_insumo?: IntFieldUpdateOperationsInput | number
-    id_do_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MovimentacaoUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    id_do_usuario?: IntFieldUpdateOperationsInput | number
-    id_do_insumo?: IntFieldUpdateOperationsInput | number
-    id_do_produto?: IntFieldUpdateOperationsInput | number
+    id_insumo_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -4555,136 +3310,14 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type MovimentacaoListRelationFilter = {
+    every?: MovimentacaoWhereInput
+    some?: MovimentacaoWhereInput
+    none?: MovimentacaoWhereInput
   }
 
-  export type UsuarioOrderByRelevanceInput = {
-    fields: UsuarioOrderByRelevanceFieldEnum | UsuarioOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type UsuarioCountOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    data_de_nascimento?: SortOrder
-    cpf?: SortOrder
-    rg?: SortOrder
-    email?: SortOrder
-    tipo_de_usuario?: SortOrder
-    rua?: SortOrder
-    numero?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    uf?: SortOrder
-    senha?: SortOrder
-    telefone?: SortOrder
-    criado_em?: SortOrder
-    criado_por?: SortOrder
-  }
-
-  export type UsuarioAvgOrderByAggregateInput = {
-    id?: SortOrder
-    tipo_de_usuario?: SortOrder
-  }
-
-  export type UsuarioMaxOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    data_de_nascimento?: SortOrder
-    cpf?: SortOrder
-    rg?: SortOrder
-    email?: SortOrder
-    tipo_de_usuario?: SortOrder
-    rua?: SortOrder
-    numero?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    uf?: SortOrder
-    senha?: SortOrder
-    telefone?: SortOrder
-    criado_em?: SortOrder
-    criado_por?: SortOrder
-  }
-
-  export type UsuarioMinOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    data_de_nascimento?: SortOrder
-    cpf?: SortOrder
-    rg?: SortOrder
-    email?: SortOrder
-    tipo_de_usuario?: SortOrder
-    rua?: SortOrder
-    numero?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    uf?: SortOrder
-    senha?: SortOrder
-    telefone?: SortOrder
-    criado_em?: SortOrder
-    criado_por?: SortOrder
-  }
-
-  export type UsuarioSumOrderByAggregateInput = {
-    id?: SortOrder
-    tipo_de_usuario?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+  export type MovimentacaoOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type Tipo_Produto_InsumoOrderByRelevanceInput = {
@@ -4727,47 +3360,127 @@ export namespace Prisma {
     quantidade?: SortOrder
   }
 
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type Tipo_Produto_InsumoScalarRelationFilter = {
+    is?: Tipo_Produto_InsumoWhereInput
+    isNot?: Tipo_Produto_InsumoWhereInput
+  }
+
+  export type MovimentacaoOrderByRelevanceInput = {
+    fields: MovimentacaoOrderByRelevanceFieldEnum | MovimentacaoOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
   export type MovimentacaoCountOrderByAggregateInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+    tipo_movimentacao?: SortOrder
+    tipo?: SortOrder
     date?: SortOrder
   }
 
   export type MovimentacaoAvgOrderByAggregateInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
   }
 
   export type MovimentacaoMaxOrderByAggregateInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+    tipo_movimentacao?: SortOrder
+    tipo?: SortOrder
     date?: SortOrder
   }
 
   export type MovimentacaoMinOrderByAggregateInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+    tipo_movimentacao?: SortOrder
+    tipo?: SortOrder
     date?: SortOrder
   }
 
   export type MovimentacaoSumOrderByAggregateInput = {
     id?: SortOrder
-    id_do_usuario?: SortOrder
-    id_do_insumo?: SortOrder
-    id_do_produto?: SortOrder
+    id_insumo_produto?: SortOrder
     quantidade?: SortOrder
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type MovimentacaoCreateNestedManyWithoutTpiInput = {
+    create?: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput> | MovimentacaoCreateWithoutTpiInput[] | MovimentacaoUncheckedCreateWithoutTpiInput[]
+    connectOrCreate?: MovimentacaoCreateOrConnectWithoutTpiInput | MovimentacaoCreateOrConnectWithoutTpiInput[]
+    createMany?: MovimentacaoCreateManyTpiInputEnvelope
+    connect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+  }
+
+  export type MovimentacaoUncheckedCreateNestedManyWithoutTpiInput = {
+    create?: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput> | MovimentacaoCreateWithoutTpiInput[] | MovimentacaoUncheckedCreateWithoutTpiInput[]
+    connectOrCreate?: MovimentacaoCreateOrConnectWithoutTpiInput | MovimentacaoCreateOrConnectWithoutTpiInput[]
+    createMany?: MovimentacaoCreateManyTpiInputEnvelope
+    connect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -4782,8 +3495,50 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type MovimentacaoUpdateManyWithoutTpiNestedInput = {
+    create?: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput> | MovimentacaoCreateWithoutTpiInput[] | MovimentacaoUncheckedCreateWithoutTpiInput[]
+    connectOrCreate?: MovimentacaoCreateOrConnectWithoutTpiInput | MovimentacaoCreateOrConnectWithoutTpiInput[]
+    upsert?: MovimentacaoUpsertWithWhereUniqueWithoutTpiInput | MovimentacaoUpsertWithWhereUniqueWithoutTpiInput[]
+    createMany?: MovimentacaoCreateManyTpiInputEnvelope
+    set?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    disconnect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    delete?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    connect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    update?: MovimentacaoUpdateWithWhereUniqueWithoutTpiInput | MovimentacaoUpdateWithWhereUniqueWithoutTpiInput[]
+    updateMany?: MovimentacaoUpdateManyWithWhereWithoutTpiInput | MovimentacaoUpdateManyWithWhereWithoutTpiInput[]
+    deleteMany?: MovimentacaoScalarWhereInput | MovimentacaoScalarWhereInput[]
+  }
+
+  export type MovimentacaoUncheckedUpdateManyWithoutTpiNestedInput = {
+    create?: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput> | MovimentacaoCreateWithoutTpiInput[] | MovimentacaoUncheckedCreateWithoutTpiInput[]
+    connectOrCreate?: MovimentacaoCreateOrConnectWithoutTpiInput | MovimentacaoCreateOrConnectWithoutTpiInput[]
+    upsert?: MovimentacaoUpsertWithWhereUniqueWithoutTpiInput | MovimentacaoUpsertWithWhereUniqueWithoutTpiInput[]
+    createMany?: MovimentacaoCreateManyTpiInputEnvelope
+    set?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    disconnect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    delete?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    connect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+    update?: MovimentacaoUpdateWithWhereUniqueWithoutTpiInput | MovimentacaoUpdateWithWhereUniqueWithoutTpiInput[]
+    updateMany?: MovimentacaoUpdateManyWithWhereWithoutTpiInput | MovimentacaoUpdateManyWithWhereWithoutTpiInput[]
+    deleteMany?: MovimentacaoScalarWhereInput | MovimentacaoScalarWhereInput[]
+  }
+
+  export type Tipo_Produto_InsumoCreateNestedOneWithoutMovimentacoesInput = {
+    create?: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    connectOrCreate?: Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
+    connect?: Tipo_Produto_InsumoWhereUniqueInput
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
+  }
+
+  export type Tipo_Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput = {
+    create?: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    connectOrCreate?: Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
+    upsert?: Tipo_Produto_InsumoUpsertWithoutMovimentacoesInput
+    connect?: Tipo_Produto_InsumoWhereUniqueInput
+    update?: XOR<XOR<Tipo_Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput, Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput>, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -4810,17 +3565,6 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4868,6 +3612,17 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
@@ -4880,6 +3635,136 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type MovimentacaoCreateWithoutTpiInput = {
+    quantidade: number
+    tipo_movimentacao: string
+    tipo: string
+    date: Date | string
+  }
+
+  export type MovimentacaoUncheckedCreateWithoutTpiInput = {
+    id?: number
+    quantidade: number
+    tipo_movimentacao: string
+    tipo: string
+    date: Date | string
+  }
+
+  export type MovimentacaoCreateOrConnectWithoutTpiInput = {
+    where: MovimentacaoWhereUniqueInput
+    create: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput>
+  }
+
+  export type MovimentacaoCreateManyTpiInputEnvelope = {
+    data: MovimentacaoCreateManyTpiInput | MovimentacaoCreateManyTpiInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MovimentacaoUpsertWithWhereUniqueWithoutTpiInput = {
+    where: MovimentacaoWhereUniqueInput
+    update: XOR<MovimentacaoUpdateWithoutTpiInput, MovimentacaoUncheckedUpdateWithoutTpiInput>
+    create: XOR<MovimentacaoCreateWithoutTpiInput, MovimentacaoUncheckedCreateWithoutTpiInput>
+  }
+
+  export type MovimentacaoUpdateWithWhereUniqueWithoutTpiInput = {
+    where: MovimentacaoWhereUniqueInput
+    data: XOR<MovimentacaoUpdateWithoutTpiInput, MovimentacaoUncheckedUpdateWithoutTpiInput>
+  }
+
+  export type MovimentacaoUpdateManyWithWhereWithoutTpiInput = {
+    where: MovimentacaoScalarWhereInput
+    data: XOR<MovimentacaoUpdateManyMutationInput, MovimentacaoUncheckedUpdateManyWithoutTpiInput>
+  }
+
+  export type MovimentacaoScalarWhereInput = {
+    AND?: MovimentacaoScalarWhereInput | MovimentacaoScalarWhereInput[]
+    OR?: MovimentacaoScalarWhereInput[]
+    NOT?: MovimentacaoScalarWhereInput | MovimentacaoScalarWhereInput[]
+    id?: IntFilter<"Movimentacao"> | number
+    id_insumo_produto?: IntFilter<"Movimentacao"> | number
+    quantidade?: IntFilter<"Movimentacao"> | number
+    tipo_movimentacao?: StringFilter<"Movimentacao"> | string
+    tipo?: StringFilter<"Movimentacao"> | string
+    date?: DateTimeFilter<"Movimentacao"> | Date | string
+  }
+
+  export type Tipo_Produto_InsumoCreateWithoutMovimentacoesInput = {
+    tipo_de_insumo: string
+    quantidade: number
+    fornecedor: string
+    tipo_de_produto: string
+  }
+
+  export type Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput = {
+    id?: number
+    tipo_de_insumo: string
+    quantidade: number
+    fornecedor: string
+    tipo_de_produto: string
+  }
+
+  export type Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput = {
+    where: Tipo_Produto_InsumoWhereUniqueInput
+    create: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+  }
+
+  export type Tipo_Produto_InsumoUpsertWithoutMovimentacoesInput = {
+    update: XOR<Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
+    create: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    where?: Tipo_Produto_InsumoWhereInput
+  }
+
+  export type Tipo_Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput = {
+    where?: Tipo_Produto_InsumoWhereInput
+    data: XOR<Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
+  }
+
+  export type Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput = {
+    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+    quantidade?: IntFieldUpdateOperationsInput | number
+    fornecedor?: StringFieldUpdateOperationsInput | string
+    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+    quantidade?: IntFieldUpdateOperationsInput | number
+    fornecedor?: StringFieldUpdateOperationsInput | string
+    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type MovimentacaoCreateManyTpiInput = {
+    id?: number
+    quantidade: number
+    tipo_movimentacao: string
+    tipo: string
+    date: Date | string
+  }
+
+  export type MovimentacaoUpdateWithoutTpiInput = {
+    quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MovimentacaoUncheckedUpdateWithoutTpiInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MovimentacaoUncheckedUpdateManyWithoutTpiInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    quantidade?: IntFieldUpdateOperationsInput | number
+    tipo_movimentacao?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

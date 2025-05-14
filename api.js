@@ -161,6 +161,17 @@ app.get('/movimentacao', async (req, res) => {
     const movimentacoes = await prisma.movimentacao.findMany(); // Busca todas as movimentações no banco
     res.json(movimentacoes); // Retorna a lista de movimentações em formato JSON
   });
+
+  app.get('/movimentacoes/:tipo', async (req, res) => {
+    const tipo = req.params.tipo; 
+    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo } });
+   
+    if (movimentacao === null) {
+      return res.status(404).json({ mensagem: 'Movimentação não encontrada' }); 
+    } else {
+      res.json(movimentacao);
+    }
+  });
    
   // Rota para obter uma movimentação específica pelo ID
   app.get('/movimentacao/:id', async (req, res) => {

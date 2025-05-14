@@ -120,25 +120,6 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UsuarioScalarFieldEnum = {
-  id: 'id',
-  nome: 'nome',
-  data_de_nascimento: 'data_de_nascimento',
-  cpf: 'cpf',
-  rg: 'rg',
-  email: 'email',
-  tipo_de_usuario: 'tipo_de_usuario',
-  rua: 'rua',
-  numero: 'numero',
-  bairro: 'bairro',
-  cidade: 'cidade',
-  uf: 'uf',
-  senha: 'senha',
-  telefone: 'telefone',
-  criado_em: 'criado_em',
-  criado_por: 'criado_por'
-};
-
 exports.Prisma.Tipo_Produto_InsumoScalarFieldEnum = {
   id: 'id',
   tipo_de_insumo: 'tipo_de_insumo',
@@ -149,10 +130,10 @@ exports.Prisma.Tipo_Produto_InsumoScalarFieldEnum = {
 
 exports.Prisma.MovimentacaoScalarFieldEnum = {
   id: 'id',
-  id_do_usuario: 'id_do_usuario',
-  id_do_insumo: 'id_do_insumo',
-  id_do_produto: 'id_do_produto',
+  id_insumo_produto: 'id_insumo_produto',
   quantidade: 'quantidade',
+  tipo_movimentacao: 'tipo_movimentacao',
+  tipo: 'tipo',
   date: 'date'
 };
 
@@ -161,31 +142,19 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.UsuarioOrderByRelevanceFieldEnum = {
-  nome: 'nome',
-  data_de_nascimento: 'data_de_nascimento',
-  cpf: 'cpf',
-  rg: 'rg',
-  email: 'email',
-  rua: 'rua',
-  numero: 'numero',
-  bairro: 'bairro',
-  cidade: 'cidade',
-  uf: 'uf',
-  senha: 'senha',
-  telefone: 'telefone',
-  criado_por: 'criado_por'
-};
-
 exports.Prisma.Tipo_Produto_InsumoOrderByRelevanceFieldEnum = {
   tipo_de_insumo: 'tipo_de_insumo',
   fornecedor: 'fornecedor',
   tipo_de_produto: 'tipo_de_produto'
 };
 
+exports.Prisma.MovimentacaoOrderByRelevanceFieldEnum = {
+  tipo_movimentacao: 'tipo_movimentacao',
+  tipo: 'tipo'
+};
+
 
 exports.Prisma.ModelName = {
-  Usuario: 'Usuario',
   Tipo_Produto_Insumo: 'Tipo_Produto_Insumo',
   Movimentacao: 'Movimentacao'
 };
