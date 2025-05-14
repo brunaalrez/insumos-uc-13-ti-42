@@ -1,11 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import {PrismaClient} from "./generated/prisma/index.js";
 
 const app = express();
 const port = 4000;
 const prisma = new PrismaClient();
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.get("/", (req, res)=>{
     res.send("Konbanwa");
@@ -164,7 +167,9 @@ app.get('/movimentacao', async (req, res) => {
 
   app.get('/movimentacoes/:tipo', async (req, res) => {
     const tipo = req.params.tipo; 
-    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo } });
+    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo },  include: {
+      tpi: true // <- inclui os dados relacionados da tabela Tipo_Produto_Insumo
+    } });
    
     if (movimentacao === null) {
       return res.status(404).json({ mensagem: 'Movimentação não encontrada' }); 

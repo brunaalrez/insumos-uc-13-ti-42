@@ -34,25 +34,25 @@ datasource db {
 //   @@map("criar usuários") // define o nome da tebela
 // }
 
-model Tipo_Produto_Insumo {
-  id              Int            @id @default(autoincrement())
-  tipo_de_insumo  String
-  quantidade      Int
-  fornecedor      String
-  tipo_de_produto String
-  movimentacoes   Movimentacao[]
+model Produto_Insumo {
+  id            Int            @id @default(autoincrement())
+  nome          String
+  quantidade    Int
+  fornecedor    String
+  tipo          String
+  movimentacoes Movimentacao[]
 
   @@map("estoque") // define o nome da tebela
 }
 
 model Movimentacao {
-  id                Int                 @id @default(autoincrement())
+  id                Int            @id @default(autoincrement())
   id_insumo_produto Int
   quantidade        Int
   tipo_movimentacao String
-  tipo              String
+  tipo_i_p          String
   date              DateTime
-  tpi               Tipo_Produto_Insumo @relation(fields: [id_insumo_produto], references: [id])
+  tpi               Produto_Insumo @relation(fields: [id_insumo_produto], references: [id])
 
   @@map("movimentacao") // define o nome da tebela
 }

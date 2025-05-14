@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Tipo_Produto_Insumo
+ * Model Produto_Insumo
  * 
  */
-export type Tipo_Produto_Insumo = $Result.DefaultSelection<Prisma.$Tipo_Produto_InsumoPayload>
+export type Produto_Insumo = $Result.DefaultSelection<Prisma.$Produto_InsumoPayload>
 /**
  * Model Movimentacao
  * 
@@ -31,8 +31,8 @@ export type Movimentacao = $Result.DefaultSelection<Prisma.$MovimentacaoPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Tipo_Produto_Insumos
- * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
+ * // Fetch zero or more Produto_Insumos
+ * const produto_Insumos = await prisma.produto_Insumo.findMany()
  * ```
  *
  *
@@ -52,8 +52,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Tipo_Produto_Insumos
-   * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
+   * // Fetch zero or more Produto_Insumos
+   * const produto_Insumos = await prisma.produto_Insumo.findMany()
    * ```
    *
    *
@@ -150,14 +150,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.tipo_Produto_Insumo`: Exposes CRUD operations for the **Tipo_Produto_Insumo** model.
+   * `prisma.produto_Insumo`: Exposes CRUD operations for the **Produto_Insumo** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Tipo_Produto_Insumos
-    * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
+    * // Fetch zero or more Produto_Insumos
+    * const produto_Insumos = await prisma.produto_Insumo.findMany()
     * ```
     */
-  get tipo_Produto_Insumo(): Prisma.Tipo_Produto_InsumoDelegate<ExtArgs, ClientOptions>;
+  get produto_Insumo(): Prisma.Produto_InsumoDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.movimentacao`: Exposes CRUD operations for the **Movimentacao** model.
@@ -608,7 +608,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Tipo_Produto_Insumo: 'Tipo_Produto_Insumo',
+    Produto_Insumo: 'Produto_Insumo',
     Movimentacao: 'Movimentacao'
   };
 
@@ -628,73 +628,73 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "tipo_Produto_Insumo" | "movimentacao"
+      modelProps: "produto_Insumo" | "movimentacao"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Tipo_Produto_Insumo: {
-        payload: Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>
-        fields: Prisma.Tipo_Produto_InsumoFieldRefs
+      Produto_Insumo: {
+        payload: Prisma.$Produto_InsumoPayload<ExtArgs>
+        fields: Prisma.Produto_InsumoFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Tipo_Produto_InsumoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload> | null
+            args: Prisma.Produto_InsumoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Tipo_Produto_InsumoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           findFirst: {
-            args: Prisma.Tipo_Produto_InsumoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload> | null
+            args: Prisma.Produto_InsumoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Tipo_Produto_InsumoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           findMany: {
-            args: Prisma.Tipo_Produto_InsumoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>[]
+            args: Prisma.Produto_InsumoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>[]
           }
           create: {
-            args: Prisma.Tipo_Produto_InsumoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           createMany: {
-            args: Prisma.Tipo_Produto_InsumoCreateManyArgs<ExtArgs>
+            args: Prisma.Produto_InsumoCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.Tipo_Produto_InsumoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           update: {
-            args: Prisma.Tipo_Produto_InsumoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           deleteMany: {
-            args: Prisma.Tipo_Produto_InsumoDeleteManyArgs<ExtArgs>
+            args: Prisma.Produto_InsumoDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.Tipo_Produto_InsumoUpdateManyArgs<ExtArgs>
+            args: Prisma.Produto_InsumoUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.Tipo_Produto_InsumoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Tipo_Produto_InsumoPayload>
+            args: Prisma.Produto_InsumoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Produto_InsumoPayload>
           }
           aggregate: {
-            args: Prisma.Tipo_Produto_InsumoAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTipo_Produto_Insumo>
+            args: Prisma.Produto_InsumoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProduto_Insumo>
           }
           groupBy: {
-            args: Prisma.Tipo_Produto_InsumoGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Tipo_Produto_InsumoGroupByOutputType>[]
+            args: Prisma.Produto_InsumoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Produto_InsumoGroupByOutputType>[]
           }
           count: {
-            args: Prisma.Tipo_Produto_InsumoCountArgs<ExtArgs>
-            result: $Utils.Optional<Tipo_Produto_InsumoCountAggregateOutputType> | number
+            args: Prisma.Produto_InsumoCountArgs<ExtArgs>
+            result: $Utils.Optional<Produto_InsumoCountAggregateOutputType> | number
           }
         }
       }
@@ -848,7 +848,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    tipo_Produto_Insumo?: Tipo_Produto_InsumoOmit
+    produto_Insumo?: Produto_InsumoOmit
     movimentacao?: MovimentacaoOmit
   }
 
@@ -940,32 +940,32 @@ export namespace Prisma {
 
 
   /**
-   * Count Type Tipo_Produto_InsumoCountOutputType
+   * Count Type Produto_InsumoCountOutputType
    */
 
-  export type Tipo_Produto_InsumoCountOutputType = {
+  export type Produto_InsumoCountOutputType = {
     movimentacoes: number
   }
 
-  export type Tipo_Produto_InsumoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    movimentacoes?: boolean | Tipo_Produto_InsumoCountOutputTypeCountMovimentacoesArgs
+  export type Produto_InsumoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    movimentacoes?: boolean | Produto_InsumoCountOutputTypeCountMovimentacoesArgs
   }
 
   // Custom InputTypes
   /**
-   * Tipo_Produto_InsumoCountOutputType without action
+   * Produto_InsumoCountOutputType without action
    */
-  export type Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_InsumoCountOutputType
+     * Select specific fields to fetch from the Produto_InsumoCountOutputType
      */
-    select?: Tipo_Produto_InsumoCountOutputTypeSelect<ExtArgs> | null
+    select?: Produto_InsumoCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * Tipo_Produto_InsumoCountOutputType without action
+   * Produto_InsumoCountOutputType without action
    */
-  export type Tipo_Produto_InsumoCountOutputTypeCountMovimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoCountOutputTypeCountMovimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: MovimentacaoWhereInput
   }
 
@@ -975,375 +975,375 @@ export namespace Prisma {
    */
 
   /**
-   * Model Tipo_Produto_Insumo
+   * Model Produto_Insumo
    */
 
-  export type AggregateTipo_Produto_Insumo = {
-    _count: Tipo_Produto_InsumoCountAggregateOutputType | null
-    _avg: Tipo_Produto_InsumoAvgAggregateOutputType | null
-    _sum: Tipo_Produto_InsumoSumAggregateOutputType | null
-    _min: Tipo_Produto_InsumoMinAggregateOutputType | null
-    _max: Tipo_Produto_InsumoMaxAggregateOutputType | null
+  export type AggregateProduto_Insumo = {
+    _count: Produto_InsumoCountAggregateOutputType | null
+    _avg: Produto_InsumoAvgAggregateOutputType | null
+    _sum: Produto_InsumoSumAggregateOutputType | null
+    _min: Produto_InsumoMinAggregateOutputType | null
+    _max: Produto_InsumoMaxAggregateOutputType | null
   }
 
-  export type Tipo_Produto_InsumoAvgAggregateOutputType = {
+  export type Produto_InsumoAvgAggregateOutputType = {
     id: number | null
     quantidade: number | null
   }
 
-  export type Tipo_Produto_InsumoSumAggregateOutputType = {
+  export type Produto_InsumoSumAggregateOutputType = {
     id: number | null
     quantidade: number | null
   }
 
-  export type Tipo_Produto_InsumoMinAggregateOutputType = {
+  export type Produto_InsumoMinAggregateOutputType = {
     id: number | null
-    tipo_de_insumo: string | null
-    quantidade: number | null
-    fornecedor: string | null
-    tipo_de_produto: string | null
-  }
-
-  export type Tipo_Produto_InsumoMaxAggregateOutputType = {
-    id: number | null
-    tipo_de_insumo: string | null
+    nome: string | null
     quantidade: number | null
     fornecedor: string | null
-    tipo_de_produto: string | null
+    tipo: string | null
   }
 
-  export type Tipo_Produto_InsumoCountAggregateOutputType = {
+  export type Produto_InsumoMaxAggregateOutputType = {
+    id: number | null
+    nome: string | null
+    quantidade: number | null
+    fornecedor: string | null
+    tipo: string | null
+  }
+
+  export type Produto_InsumoCountAggregateOutputType = {
     id: number
-    tipo_de_insumo: number
+    nome: number
     quantidade: number
     fornecedor: number
-    tipo_de_produto: number
+    tipo: number
     _all: number
   }
 
 
-  export type Tipo_Produto_InsumoAvgAggregateInputType = {
+  export type Produto_InsumoAvgAggregateInputType = {
     id?: true
     quantidade?: true
   }
 
-  export type Tipo_Produto_InsumoSumAggregateInputType = {
+  export type Produto_InsumoSumAggregateInputType = {
     id?: true
     quantidade?: true
   }
 
-  export type Tipo_Produto_InsumoMinAggregateInputType = {
+  export type Produto_InsumoMinAggregateInputType = {
     id?: true
-    tipo_de_insumo?: true
+    nome?: true
     quantidade?: true
     fornecedor?: true
-    tipo_de_produto?: true
+    tipo?: true
   }
 
-  export type Tipo_Produto_InsumoMaxAggregateInputType = {
+  export type Produto_InsumoMaxAggregateInputType = {
     id?: true
-    tipo_de_insumo?: true
+    nome?: true
     quantidade?: true
     fornecedor?: true
-    tipo_de_produto?: true
+    tipo?: true
   }
 
-  export type Tipo_Produto_InsumoCountAggregateInputType = {
+  export type Produto_InsumoCountAggregateInputType = {
     id?: true
-    tipo_de_insumo?: true
+    nome?: true
     quantidade?: true
     fornecedor?: true
-    tipo_de_produto?: true
+    tipo?: true
     _all?: true
   }
 
-  export type Tipo_Produto_InsumoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tipo_Produto_Insumo to aggregate.
+     * Filter which Produto_Insumo to aggregate.
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tipo_Produto_Insumos to fetch.
+     * Determine the order of Produto_Insumos to fetch.
      */
-    orderBy?: Tipo_Produto_InsumoOrderByWithRelationInput | Tipo_Produto_InsumoOrderByWithRelationInput[]
+    orderBy?: Produto_InsumoOrderByWithRelationInput | Produto_InsumoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Tipo_Produto_InsumoWhereUniqueInput
+    cursor?: Produto_InsumoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tipo_Produto_Insumos from the position of the cursor.
+     * Take `±n` Produto_Insumos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tipo_Produto_Insumos.
+     * Skip the first `n` Produto_Insumos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Tipo_Produto_Insumos
+     * Count returned Produto_Insumos
     **/
-    _count?: true | Tipo_Produto_InsumoCountAggregateInputType
+    _count?: true | Produto_InsumoCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Tipo_Produto_InsumoAvgAggregateInputType
+    _avg?: Produto_InsumoAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Tipo_Produto_InsumoSumAggregateInputType
+    _sum?: Produto_InsumoSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Tipo_Produto_InsumoMinAggregateInputType
+    _min?: Produto_InsumoMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Tipo_Produto_InsumoMaxAggregateInputType
+    _max?: Produto_InsumoMaxAggregateInputType
   }
 
-  export type GetTipo_Produto_InsumoAggregateType<T extends Tipo_Produto_InsumoAggregateArgs> = {
-        [P in keyof T & keyof AggregateTipo_Produto_Insumo]: P extends '_count' | 'count'
+  export type GetProduto_InsumoAggregateType<T extends Produto_InsumoAggregateArgs> = {
+        [P in keyof T & keyof AggregateProduto_Insumo]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTipo_Produto_Insumo[P]>
-      : GetScalarType<T[P], AggregateTipo_Produto_Insumo[P]>
+        : GetScalarType<T[P], AggregateProduto_Insumo[P]>
+      : GetScalarType<T[P], AggregateProduto_Insumo[P]>
   }
 
 
 
 
-  export type Tipo_Produto_InsumoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Tipo_Produto_InsumoWhereInput
-    orderBy?: Tipo_Produto_InsumoOrderByWithAggregationInput | Tipo_Produto_InsumoOrderByWithAggregationInput[]
-    by: Tipo_Produto_InsumoScalarFieldEnum[] | Tipo_Produto_InsumoScalarFieldEnum
-    having?: Tipo_Produto_InsumoScalarWhereWithAggregatesInput
+  export type Produto_InsumoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Produto_InsumoWhereInput
+    orderBy?: Produto_InsumoOrderByWithAggregationInput | Produto_InsumoOrderByWithAggregationInput[]
+    by: Produto_InsumoScalarFieldEnum[] | Produto_InsumoScalarFieldEnum
+    having?: Produto_InsumoScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Tipo_Produto_InsumoCountAggregateInputType | true
-    _avg?: Tipo_Produto_InsumoAvgAggregateInputType
-    _sum?: Tipo_Produto_InsumoSumAggregateInputType
-    _min?: Tipo_Produto_InsumoMinAggregateInputType
-    _max?: Tipo_Produto_InsumoMaxAggregateInputType
+    _count?: Produto_InsumoCountAggregateInputType | true
+    _avg?: Produto_InsumoAvgAggregateInputType
+    _sum?: Produto_InsumoSumAggregateInputType
+    _min?: Produto_InsumoMinAggregateInputType
+    _max?: Produto_InsumoMaxAggregateInputType
   }
 
-  export type Tipo_Produto_InsumoGroupByOutputType = {
+  export type Produto_InsumoGroupByOutputType = {
     id: number
-    tipo_de_insumo: string
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
-    _count: Tipo_Produto_InsumoCountAggregateOutputType | null
-    _avg: Tipo_Produto_InsumoAvgAggregateOutputType | null
-    _sum: Tipo_Produto_InsumoSumAggregateOutputType | null
-    _min: Tipo_Produto_InsumoMinAggregateOutputType | null
-    _max: Tipo_Produto_InsumoMaxAggregateOutputType | null
+    tipo: string
+    _count: Produto_InsumoCountAggregateOutputType | null
+    _avg: Produto_InsumoAvgAggregateOutputType | null
+    _sum: Produto_InsumoSumAggregateOutputType | null
+    _min: Produto_InsumoMinAggregateOutputType | null
+    _max: Produto_InsumoMaxAggregateOutputType | null
   }
 
-  type GetTipo_Produto_InsumoGroupByPayload<T extends Tipo_Produto_InsumoGroupByArgs> = Prisma.PrismaPromise<
+  type GetProduto_InsumoGroupByPayload<T extends Produto_InsumoGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Tipo_Produto_InsumoGroupByOutputType, T['by']> &
+      PickEnumerable<Produto_InsumoGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Tipo_Produto_InsumoGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Produto_InsumoGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Tipo_Produto_InsumoGroupByOutputType[P]>
-            : GetScalarType<T[P], Tipo_Produto_InsumoGroupByOutputType[P]>
+              : GetScalarType<T[P], Produto_InsumoGroupByOutputType[P]>
+            : GetScalarType<T[P], Produto_InsumoGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Tipo_Produto_InsumoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Produto_InsumoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    tipo_de_insumo?: boolean
+    nome?: boolean
     quantidade?: boolean
     fornecedor?: boolean
-    tipo_de_produto?: boolean
-    movimentacoes?: boolean | Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>
-    _count?: boolean | Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["tipo_Produto_Insumo"]>
+    tipo?: boolean
+    movimentacoes?: boolean | Produto_Insumo$movimentacoesArgs<ExtArgs>
+    _count?: boolean | Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["produto_Insumo"]>
 
 
 
-  export type Tipo_Produto_InsumoSelectScalar = {
+  export type Produto_InsumoSelectScalar = {
     id?: boolean
-    tipo_de_insumo?: boolean
+    nome?: boolean
     quantidade?: boolean
     fornecedor?: boolean
-    tipo_de_produto?: boolean
+    tipo?: boolean
   }
 
-  export type Tipo_Produto_InsumoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tipo_de_insumo" | "quantidade" | "fornecedor" | "tipo_de_produto", ExtArgs["result"]["tipo_Produto_Insumo"]>
-  export type Tipo_Produto_InsumoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    movimentacoes?: boolean | Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>
-    _count?: boolean | Tipo_Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
+  export type Produto_InsumoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "quantidade" | "fornecedor" | "tipo", ExtArgs["result"]["produto_Insumo"]>
+  export type Produto_InsumoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    movimentacoes?: boolean | Produto_Insumo$movimentacoesArgs<ExtArgs>
+    _count?: boolean | Produto_InsumoCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $Tipo_Produto_InsumoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Tipo_Produto_Insumo"
+  export type $Produto_InsumoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Produto_Insumo"
     objects: {
       movimentacoes: Prisma.$MovimentacaoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      tipo_de_insumo: string
+      nome: string
       quantidade: number
       fornecedor: string
-      tipo_de_produto: string
-    }, ExtArgs["result"]["tipo_Produto_Insumo"]>
+      tipo: string
+    }, ExtArgs["result"]["produto_Insumo"]>
     composites: {}
   }
 
-  type Tipo_Produto_InsumoGetPayload<S extends boolean | null | undefined | Tipo_Produto_InsumoDefaultArgs> = $Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload, S>
+  type Produto_InsumoGetPayload<S extends boolean | null | undefined | Produto_InsumoDefaultArgs> = $Result.GetResult<Prisma.$Produto_InsumoPayload, S>
 
-  type Tipo_Produto_InsumoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<Tipo_Produto_InsumoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Tipo_Produto_InsumoCountAggregateInputType | true
+  type Produto_InsumoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Produto_InsumoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Produto_InsumoCountAggregateInputType | true
     }
 
-  export interface Tipo_Produto_InsumoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tipo_Produto_Insumo'], meta: { name: 'Tipo_Produto_Insumo' } }
+  export interface Produto_InsumoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Produto_Insumo'], meta: { name: 'Produto_Insumo' } }
     /**
-     * Find zero or one Tipo_Produto_Insumo that matches the filter.
-     * @param {Tipo_Produto_InsumoFindUniqueArgs} args - Arguments to find a Tipo_Produto_Insumo
+     * Find zero or one Produto_Insumo that matches the filter.
+     * @param {Produto_InsumoFindUniqueArgs} args - Arguments to find a Produto_Insumo
      * @example
-     * // Get one Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.findUnique({
+     * // Get one Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends Tipo_Produto_InsumoFindUniqueArgs>(args: SelectSubset<T, Tipo_Produto_InsumoFindUniqueArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends Produto_InsumoFindUniqueArgs>(args: SelectSubset<T, Produto_InsumoFindUniqueArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Tipo_Produto_Insumo that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Produto_Insumo that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {Tipo_Produto_InsumoFindUniqueOrThrowArgs} args - Arguments to find a Tipo_Produto_Insumo
+     * @param {Produto_InsumoFindUniqueOrThrowArgs} args - Arguments to find a Produto_Insumo
      * @example
-     * // Get one Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.findUniqueOrThrow({
+     * // Get one Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends Tipo_Produto_InsumoFindUniqueOrThrowArgs>(args: SelectSubset<T, Tipo_Produto_InsumoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends Produto_InsumoFindUniqueOrThrowArgs>(args: SelectSubset<T, Produto_InsumoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tipo_Produto_Insumo that matches the filter.
+     * Find the first Produto_Insumo that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoFindFirstArgs} args - Arguments to find a Tipo_Produto_Insumo
+     * @param {Produto_InsumoFindFirstArgs} args - Arguments to find a Produto_Insumo
      * @example
-     * // Get one Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.findFirst({
+     * // Get one Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends Tipo_Produto_InsumoFindFirstArgs>(args?: SelectSubset<T, Tipo_Produto_InsumoFindFirstArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends Produto_InsumoFindFirstArgs>(args?: SelectSubset<T, Produto_InsumoFindFirstArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tipo_Produto_Insumo that matches the filter or
+     * Find the first Produto_Insumo that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoFindFirstOrThrowArgs} args - Arguments to find a Tipo_Produto_Insumo
+     * @param {Produto_InsumoFindFirstOrThrowArgs} args - Arguments to find a Produto_Insumo
      * @example
-     * // Get one Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.findFirstOrThrow({
+     * // Get one Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends Tipo_Produto_InsumoFindFirstOrThrowArgs>(args?: SelectSubset<T, Tipo_Produto_InsumoFindFirstOrThrowArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends Produto_InsumoFindFirstOrThrowArgs>(args?: SelectSubset<T, Produto_InsumoFindFirstOrThrowArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Tipo_Produto_Insumos that matches the filter.
+     * Find zero or more Produto_Insumos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {Produto_InsumoFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Tipo_Produto_Insumos
-     * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany()
+     * // Get all Produto_Insumos
+     * const produto_Insumos = await prisma.produto_Insumo.findMany()
      * 
-     * // Get first 10 Tipo_Produto_Insumos
-     * const tipo_Produto_Insumos = await prisma.tipo_Produto_Insumo.findMany({ take: 10 })
+     * // Get first 10 Produto_Insumos
+     * const produto_Insumos = await prisma.produto_Insumo.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const tipo_Produto_InsumoWithIdOnly = await prisma.tipo_Produto_Insumo.findMany({ select: { id: true } })
+     * const produto_InsumoWithIdOnly = await prisma.produto_Insumo.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends Tipo_Produto_InsumoFindManyArgs>(args?: SelectSubset<T, Tipo_Produto_InsumoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends Produto_InsumoFindManyArgs>(args?: SelectSubset<T, Produto_InsumoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Tipo_Produto_Insumo.
-     * @param {Tipo_Produto_InsumoCreateArgs} args - Arguments to create a Tipo_Produto_Insumo.
+     * Create a Produto_Insumo.
+     * @param {Produto_InsumoCreateArgs} args - Arguments to create a Produto_Insumo.
      * @example
-     * // Create one Tipo_Produto_Insumo
-     * const Tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.create({
+     * // Create one Produto_Insumo
+     * const Produto_Insumo = await prisma.produto_Insumo.create({
      *   data: {
-     *     // ... data to create a Tipo_Produto_Insumo
+     *     // ... data to create a Produto_Insumo
      *   }
      * })
      * 
      */
-    create<T extends Tipo_Produto_InsumoCreateArgs>(args: SelectSubset<T, Tipo_Produto_InsumoCreateArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends Produto_InsumoCreateArgs>(args: SelectSubset<T, Produto_InsumoCreateArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Tipo_Produto_Insumos.
-     * @param {Tipo_Produto_InsumoCreateManyArgs} args - Arguments to create many Tipo_Produto_Insumos.
+     * Create many Produto_Insumos.
+     * @param {Produto_InsumoCreateManyArgs} args - Arguments to create many Produto_Insumos.
      * @example
-     * // Create many Tipo_Produto_Insumos
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.createMany({
+     * // Create many Produto_Insumos
+     * const produto_Insumo = await prisma.produto_Insumo.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends Tipo_Produto_InsumoCreateManyArgs>(args?: SelectSubset<T, Tipo_Produto_InsumoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends Produto_InsumoCreateManyArgs>(args?: SelectSubset<T, Produto_InsumoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Tipo_Produto_Insumo.
-     * @param {Tipo_Produto_InsumoDeleteArgs} args - Arguments to delete one Tipo_Produto_Insumo.
+     * Delete a Produto_Insumo.
+     * @param {Produto_InsumoDeleteArgs} args - Arguments to delete one Produto_Insumo.
      * @example
-     * // Delete one Tipo_Produto_Insumo
-     * const Tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.delete({
+     * // Delete one Produto_Insumo
+     * const Produto_Insumo = await prisma.produto_Insumo.delete({
      *   where: {
-     *     // ... filter to delete one Tipo_Produto_Insumo
+     *     // ... filter to delete one Produto_Insumo
      *   }
      * })
      * 
      */
-    delete<T extends Tipo_Produto_InsumoDeleteArgs>(args: SelectSubset<T, Tipo_Produto_InsumoDeleteArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends Produto_InsumoDeleteArgs>(args: SelectSubset<T, Produto_InsumoDeleteArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Tipo_Produto_Insumo.
-     * @param {Tipo_Produto_InsumoUpdateArgs} args - Arguments to update one Tipo_Produto_Insumo.
+     * Update one Produto_Insumo.
+     * @param {Produto_InsumoUpdateArgs} args - Arguments to update one Produto_Insumo.
      * @example
-     * // Update one Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.update({
+     * // Update one Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1353,30 +1353,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends Tipo_Produto_InsumoUpdateArgs>(args: SelectSubset<T, Tipo_Produto_InsumoUpdateArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends Produto_InsumoUpdateArgs>(args: SelectSubset<T, Produto_InsumoUpdateArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Tipo_Produto_Insumos.
-     * @param {Tipo_Produto_InsumoDeleteManyArgs} args - Arguments to filter Tipo_Produto_Insumos to delete.
+     * Delete zero or more Produto_Insumos.
+     * @param {Produto_InsumoDeleteManyArgs} args - Arguments to filter Produto_Insumos to delete.
      * @example
-     * // Delete a few Tipo_Produto_Insumos
-     * const { count } = await prisma.tipo_Produto_Insumo.deleteMany({
+     * // Delete a few Produto_Insumos
+     * const { count } = await prisma.produto_Insumo.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends Tipo_Produto_InsumoDeleteManyArgs>(args?: SelectSubset<T, Tipo_Produto_InsumoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends Produto_InsumoDeleteManyArgs>(args?: SelectSubset<T, Produto_InsumoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tipo_Produto_Insumos.
+     * Update zero or more Produto_Insumos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Produto_InsumoUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Tipo_Produto_Insumos
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.updateMany({
+     * // Update many Produto_Insumos
+     * const produto_Insumo = await prisma.produto_Insumo.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1386,56 +1386,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends Tipo_Produto_InsumoUpdateManyArgs>(args: SelectSubset<T, Tipo_Produto_InsumoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends Produto_InsumoUpdateManyArgs>(args: SelectSubset<T, Produto_InsumoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Tipo_Produto_Insumo.
-     * @param {Tipo_Produto_InsumoUpsertArgs} args - Arguments to update or create a Tipo_Produto_Insumo.
+     * Create or update one Produto_Insumo.
+     * @param {Produto_InsumoUpsertArgs} args - Arguments to update or create a Produto_Insumo.
      * @example
-     * // Update or create a Tipo_Produto_Insumo
-     * const tipo_Produto_Insumo = await prisma.tipo_Produto_Insumo.upsert({
+     * // Update or create a Produto_Insumo
+     * const produto_Insumo = await prisma.produto_Insumo.upsert({
      *   create: {
-     *     // ... data to create a Tipo_Produto_Insumo
+     *     // ... data to create a Produto_Insumo
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Tipo_Produto_Insumo we want to update
+     *     // ... the filter for the Produto_Insumo we want to update
      *   }
      * })
      */
-    upsert<T extends Tipo_Produto_InsumoUpsertArgs>(args: SelectSubset<T, Tipo_Produto_InsumoUpsertArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends Produto_InsumoUpsertArgs>(args: SelectSubset<T, Produto_InsumoUpsertArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Tipo_Produto_Insumos.
+     * Count the number of Produto_Insumos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoCountArgs} args - Arguments to filter Tipo_Produto_Insumos to count.
+     * @param {Produto_InsumoCountArgs} args - Arguments to filter Produto_Insumos to count.
      * @example
-     * // Count the number of Tipo_Produto_Insumos
-     * const count = await prisma.tipo_Produto_Insumo.count({
+     * // Count the number of Produto_Insumos
+     * const count = await prisma.produto_Insumo.count({
      *   where: {
-     *     // ... the filter for the Tipo_Produto_Insumos we want to count
+     *     // ... the filter for the Produto_Insumos we want to count
      *   }
      * })
     **/
-    count<T extends Tipo_Produto_InsumoCountArgs>(
-      args?: Subset<T, Tipo_Produto_InsumoCountArgs>,
+    count<T extends Produto_InsumoCountArgs>(
+      args?: Subset<T, Produto_InsumoCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Tipo_Produto_InsumoCountAggregateOutputType>
+          : GetScalarType<T['select'], Produto_InsumoCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Tipo_Produto_Insumo.
+     * Allows you to perform aggregations operations on a Produto_Insumo.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Produto_InsumoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1455,13 +1455,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Tipo_Produto_InsumoAggregateArgs>(args: Subset<T, Tipo_Produto_InsumoAggregateArgs>): Prisma.PrismaPromise<GetTipo_Produto_InsumoAggregateType<T>>
+    aggregate<T extends Produto_InsumoAggregateArgs>(args: Subset<T, Produto_InsumoAggregateArgs>): Prisma.PrismaPromise<GetProduto_InsumoAggregateType<T>>
 
     /**
-     * Group by Tipo_Produto_Insumo.
+     * Group by Produto_Insumo.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Tipo_Produto_InsumoGroupByArgs} args - Group by arguments.
+     * @param {Produto_InsumoGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1476,14 +1476,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Tipo_Produto_InsumoGroupByArgs,
+      T extends Produto_InsumoGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Tipo_Produto_InsumoGroupByArgs['orderBy'] }
-        : { orderBy?: Tipo_Produto_InsumoGroupByArgs['orderBy'] },
+        ? { orderBy: Produto_InsumoGroupByArgs['orderBy'] }
+        : { orderBy?: Produto_InsumoGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1532,22 +1532,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Tipo_Produto_InsumoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTipo_Produto_InsumoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Produto_InsumoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProduto_InsumoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Tipo_Produto_Insumo model
+   * Fields of the Produto_Insumo model
    */
-  readonly fields: Tipo_Produto_InsumoFieldRefs;
+  readonly fields: Produto_InsumoFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Tipo_Produto_Insumo.
+   * The delegate class that acts as a "Promise-like" for Produto_Insumo.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Tipo_Produto_InsumoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Produto_InsumoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    movimentacoes<T extends Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs> = {}>(args?: Subset<T, Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MovimentacaoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    movimentacoes<T extends Produto_Insumo$movimentacoesArgs<ExtArgs> = {}>(args?: Subset<T, Produto_Insumo$movimentacoesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MovimentacaoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1574,360 +1574,360 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Tipo_Produto_Insumo model
+   * Fields of the Produto_Insumo model
    */
-  interface Tipo_Produto_InsumoFieldRefs {
-    readonly id: FieldRef<"Tipo_Produto_Insumo", 'Int'>
-    readonly tipo_de_insumo: FieldRef<"Tipo_Produto_Insumo", 'String'>
-    readonly quantidade: FieldRef<"Tipo_Produto_Insumo", 'Int'>
-    readonly fornecedor: FieldRef<"Tipo_Produto_Insumo", 'String'>
-    readonly tipo_de_produto: FieldRef<"Tipo_Produto_Insumo", 'String'>
+  interface Produto_InsumoFieldRefs {
+    readonly id: FieldRef<"Produto_Insumo", 'Int'>
+    readonly nome: FieldRef<"Produto_Insumo", 'String'>
+    readonly quantidade: FieldRef<"Produto_Insumo", 'Int'>
+    readonly fornecedor: FieldRef<"Produto_Insumo", 'String'>
+    readonly tipo: FieldRef<"Produto_Insumo", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Tipo_Produto_Insumo findUnique
+   * Produto_Insumo findUnique
    */
-  export type Tipo_Produto_InsumoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter, which Tipo_Produto_Insumo to fetch.
+     * Filter, which Produto_Insumo to fetch.
      */
-    where: Tipo_Produto_InsumoWhereUniqueInput
+    where: Produto_InsumoWhereUniqueInput
   }
 
   /**
-   * Tipo_Produto_Insumo findUniqueOrThrow
+   * Produto_Insumo findUniqueOrThrow
    */
-  export type Tipo_Produto_InsumoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter, which Tipo_Produto_Insumo to fetch.
+     * Filter, which Produto_Insumo to fetch.
      */
-    where: Tipo_Produto_InsumoWhereUniqueInput
+    where: Produto_InsumoWhereUniqueInput
   }
 
   /**
-   * Tipo_Produto_Insumo findFirst
+   * Produto_Insumo findFirst
    */
-  export type Tipo_Produto_InsumoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter, which Tipo_Produto_Insumo to fetch.
+     * Filter, which Produto_Insumo to fetch.
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tipo_Produto_Insumos to fetch.
+     * Determine the order of Produto_Insumos to fetch.
      */
-    orderBy?: Tipo_Produto_InsumoOrderByWithRelationInput | Tipo_Produto_InsumoOrderByWithRelationInput[]
+    orderBy?: Produto_InsumoOrderByWithRelationInput | Produto_InsumoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tipo_Produto_Insumos.
+     * Sets the position for searching for Produto_Insumos.
      */
-    cursor?: Tipo_Produto_InsumoWhereUniqueInput
+    cursor?: Produto_InsumoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tipo_Produto_Insumos from the position of the cursor.
+     * Take `±n` Produto_Insumos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tipo_Produto_Insumos.
+     * Skip the first `n` Produto_Insumos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tipo_Produto_Insumos.
+     * Filter by unique combinations of Produto_Insumos.
      */
-    distinct?: Tipo_Produto_InsumoScalarFieldEnum | Tipo_Produto_InsumoScalarFieldEnum[]
+    distinct?: Produto_InsumoScalarFieldEnum | Produto_InsumoScalarFieldEnum[]
   }
 
   /**
-   * Tipo_Produto_Insumo findFirstOrThrow
+   * Produto_Insumo findFirstOrThrow
    */
-  export type Tipo_Produto_InsumoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter, which Tipo_Produto_Insumo to fetch.
+     * Filter, which Produto_Insumo to fetch.
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tipo_Produto_Insumos to fetch.
+     * Determine the order of Produto_Insumos to fetch.
      */
-    orderBy?: Tipo_Produto_InsumoOrderByWithRelationInput | Tipo_Produto_InsumoOrderByWithRelationInput[]
+    orderBy?: Produto_InsumoOrderByWithRelationInput | Produto_InsumoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Tipo_Produto_Insumos.
+     * Sets the position for searching for Produto_Insumos.
      */
-    cursor?: Tipo_Produto_InsumoWhereUniqueInput
+    cursor?: Produto_InsumoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tipo_Produto_Insumos from the position of the cursor.
+     * Take `±n` Produto_Insumos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tipo_Produto_Insumos.
+     * Skip the first `n` Produto_Insumos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Tipo_Produto_Insumos.
+     * Filter by unique combinations of Produto_Insumos.
      */
-    distinct?: Tipo_Produto_InsumoScalarFieldEnum | Tipo_Produto_InsumoScalarFieldEnum[]
+    distinct?: Produto_InsumoScalarFieldEnum | Produto_InsumoScalarFieldEnum[]
   }
 
   /**
-   * Tipo_Produto_Insumo findMany
+   * Produto_Insumo findMany
    */
-  export type Tipo_Produto_InsumoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter, which Tipo_Produto_Insumos to fetch.
+     * Filter, which Produto_Insumos to fetch.
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Tipo_Produto_Insumos to fetch.
+     * Determine the order of Produto_Insumos to fetch.
      */
-    orderBy?: Tipo_Produto_InsumoOrderByWithRelationInput | Tipo_Produto_InsumoOrderByWithRelationInput[]
+    orderBy?: Produto_InsumoOrderByWithRelationInput | Produto_InsumoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Tipo_Produto_Insumos.
+     * Sets the position for listing Produto_Insumos.
      */
-    cursor?: Tipo_Produto_InsumoWhereUniqueInput
+    cursor?: Produto_InsumoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Tipo_Produto_Insumos from the position of the cursor.
+     * Take `±n` Produto_Insumos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Tipo_Produto_Insumos.
+     * Skip the first `n` Produto_Insumos.
      */
     skip?: number
-    distinct?: Tipo_Produto_InsumoScalarFieldEnum | Tipo_Produto_InsumoScalarFieldEnum[]
+    distinct?: Produto_InsumoScalarFieldEnum | Produto_InsumoScalarFieldEnum[]
   }
 
   /**
-   * Tipo_Produto_Insumo create
+   * Produto_Insumo create
    */
-  export type Tipo_Produto_InsumoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * The data needed to create a Tipo_Produto_Insumo.
+     * The data needed to create a Produto_Insumo.
      */
-    data: XOR<Tipo_Produto_InsumoCreateInput, Tipo_Produto_InsumoUncheckedCreateInput>
+    data: XOR<Produto_InsumoCreateInput, Produto_InsumoUncheckedCreateInput>
   }
 
   /**
-   * Tipo_Produto_Insumo createMany
+   * Produto_Insumo createMany
    */
-  export type Tipo_Produto_InsumoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Tipo_Produto_Insumos.
+     * The data used to create many Produto_Insumos.
      */
-    data: Tipo_Produto_InsumoCreateManyInput | Tipo_Produto_InsumoCreateManyInput[]
+    data: Produto_InsumoCreateManyInput | Produto_InsumoCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Tipo_Produto_Insumo update
+   * Produto_Insumo update
    */
-  export type Tipo_Produto_InsumoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * The data needed to update a Tipo_Produto_Insumo.
+     * The data needed to update a Produto_Insumo.
      */
-    data: XOR<Tipo_Produto_InsumoUpdateInput, Tipo_Produto_InsumoUncheckedUpdateInput>
+    data: XOR<Produto_InsumoUpdateInput, Produto_InsumoUncheckedUpdateInput>
     /**
-     * Choose, which Tipo_Produto_Insumo to update.
+     * Choose, which Produto_Insumo to update.
      */
-    where: Tipo_Produto_InsumoWhereUniqueInput
+    where: Produto_InsumoWhereUniqueInput
   }
 
   /**
-   * Tipo_Produto_Insumo updateMany
+   * Produto_Insumo updateMany
    */
-  export type Tipo_Produto_InsumoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Tipo_Produto_Insumos.
+     * The data used to update Produto_Insumos.
      */
-    data: XOR<Tipo_Produto_InsumoUpdateManyMutationInput, Tipo_Produto_InsumoUncheckedUpdateManyInput>
+    data: XOR<Produto_InsumoUpdateManyMutationInput, Produto_InsumoUncheckedUpdateManyInput>
     /**
-     * Filter which Tipo_Produto_Insumos to update
+     * Filter which Produto_Insumos to update
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
-     * Limit how many Tipo_Produto_Insumos to update.
+     * Limit how many Produto_Insumos to update.
      */
     limit?: number
   }
 
   /**
-   * Tipo_Produto_Insumo upsert
+   * Produto_Insumo upsert
    */
-  export type Tipo_Produto_InsumoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * The filter to search for the Tipo_Produto_Insumo to update in case it exists.
+     * The filter to search for the Produto_Insumo to update in case it exists.
      */
-    where: Tipo_Produto_InsumoWhereUniqueInput
+    where: Produto_InsumoWhereUniqueInput
     /**
-     * In case the Tipo_Produto_Insumo found by the `where` argument doesn't exist, create a new Tipo_Produto_Insumo with this data.
+     * In case the Produto_Insumo found by the `where` argument doesn't exist, create a new Produto_Insumo with this data.
      */
-    create: XOR<Tipo_Produto_InsumoCreateInput, Tipo_Produto_InsumoUncheckedCreateInput>
+    create: XOR<Produto_InsumoCreateInput, Produto_InsumoUncheckedCreateInput>
     /**
-     * In case the Tipo_Produto_Insumo was found with the provided `where` argument, update it with this data.
+     * In case the Produto_Insumo was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Tipo_Produto_InsumoUpdateInput, Tipo_Produto_InsumoUncheckedUpdateInput>
+    update: XOR<Produto_InsumoUpdateInput, Produto_InsumoUncheckedUpdateInput>
   }
 
   /**
-   * Tipo_Produto_Insumo delete
+   * Produto_Insumo delete
    */
-  export type Tipo_Produto_InsumoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
     /**
-     * Filter which Tipo_Produto_Insumo to delete.
+     * Filter which Produto_Insumo to delete.
      */
-    where: Tipo_Produto_InsumoWhereUniqueInput
+    where: Produto_InsumoWhereUniqueInput
   }
 
   /**
-   * Tipo_Produto_Insumo deleteMany
+   * Produto_Insumo deleteMany
    */
-  export type Tipo_Produto_InsumoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tipo_Produto_Insumos to delete
+     * Filter which Produto_Insumos to delete
      */
-    where?: Tipo_Produto_InsumoWhereInput
+    where?: Produto_InsumoWhereInput
     /**
-     * Limit how many Tipo_Produto_Insumos to delete.
+     * Limit how many Produto_Insumos to delete.
      */
     limit?: number
   }
 
   /**
-   * Tipo_Produto_Insumo.movimentacoes
+   * Produto_Insumo.movimentacoes
    */
-  export type Tipo_Produto_Insumo$movimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_Insumo$movimentacoesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Movimentacao
      */
@@ -1949,21 +1949,21 @@ export namespace Prisma {
   }
 
   /**
-   * Tipo_Produto_Insumo without action
+   * Produto_Insumo without action
    */
-  export type Tipo_Produto_InsumoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Produto_InsumoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tipo_Produto_Insumo
+     * Select specific fields to fetch from the Produto_Insumo
      */
-    select?: Tipo_Produto_InsumoSelect<ExtArgs> | null
+    select?: Produto_InsumoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tipo_Produto_Insumo
+     * Omit specific fields from the Produto_Insumo
      */
-    omit?: Tipo_Produto_InsumoOmit<ExtArgs> | null
+    omit?: Produto_InsumoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Tipo_Produto_InsumoInclude<ExtArgs> | null
+    include?: Produto_InsumoInclude<ExtArgs> | null
   }
 
 
@@ -1996,7 +1996,7 @@ export namespace Prisma {
     id_insumo_produto: number | null
     quantidade: number | null
     tipo_movimentacao: string | null
-    tipo: string | null
+    tipo_i_p: string | null
     date: Date | null
   }
 
@@ -2005,7 +2005,7 @@ export namespace Prisma {
     id_insumo_produto: number | null
     quantidade: number | null
     tipo_movimentacao: string | null
-    tipo: string | null
+    tipo_i_p: string | null
     date: Date | null
   }
 
@@ -2014,7 +2014,7 @@ export namespace Prisma {
     id_insumo_produto: number
     quantidade: number
     tipo_movimentacao: number
-    tipo: number
+    tipo_i_p: number
     date: number
     _all: number
   }
@@ -2037,7 +2037,7 @@ export namespace Prisma {
     id_insumo_produto?: true
     quantidade?: true
     tipo_movimentacao?: true
-    tipo?: true
+    tipo_i_p?: true
     date?: true
   }
 
@@ -2046,7 +2046,7 @@ export namespace Prisma {
     id_insumo_produto?: true
     quantidade?: true
     tipo_movimentacao?: true
-    tipo?: true
+    tipo_i_p?: true
     date?: true
   }
 
@@ -2055,7 +2055,7 @@ export namespace Prisma {
     id_insumo_produto?: true
     quantidade?: true
     tipo_movimentacao?: true
-    tipo?: true
+    tipo_i_p?: true
     date?: true
     _all?: true
   }
@@ -2151,7 +2151,7 @@ export namespace Prisma {
     id_insumo_produto: number
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date
     _count: MovimentacaoCountAggregateOutputType | null
     _avg: MovimentacaoAvgAggregateOutputType | null
@@ -2179,9 +2179,9 @@ export namespace Prisma {
     id_insumo_produto?: boolean
     quantidade?: boolean
     tipo_movimentacao?: boolean
-    tipo?: boolean
+    tipo_i_p?: boolean
     date?: boolean
-    tpi?: boolean | Tipo_Produto_InsumoDefaultArgs<ExtArgs>
+    tpi?: boolean | Produto_InsumoDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["movimentacao"]>
 
 
@@ -2191,26 +2191,26 @@ export namespace Prisma {
     id_insumo_produto?: boolean
     quantidade?: boolean
     tipo_movimentacao?: boolean
-    tipo?: boolean
+    tipo_i_p?: boolean
     date?: boolean
   }
 
-  export type MovimentacaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_insumo_produto" | "quantidade" | "tipo_movimentacao" | "tipo" | "date", ExtArgs["result"]["movimentacao"]>
+  export type MovimentacaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "id_insumo_produto" | "quantidade" | "tipo_movimentacao" | "tipo_i_p" | "date", ExtArgs["result"]["movimentacao"]>
   export type MovimentacaoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tpi?: boolean | Tipo_Produto_InsumoDefaultArgs<ExtArgs>
+    tpi?: boolean | Produto_InsumoDefaultArgs<ExtArgs>
   }
 
   export type $MovimentacaoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Movimentacao"
     objects: {
-      tpi: Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>
+      tpi: Prisma.$Produto_InsumoPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       id_insumo_produto: number
       quantidade: number
       tipo_movimentacao: string
-      tipo: string
+      tipo_i_p: string
       date: Date
     }, ExtArgs["result"]["movimentacao"]>
     composites: {}
@@ -2552,7 +2552,7 @@ export namespace Prisma {
    */
   export interface Prisma__MovimentacaoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    tpi<T extends Tipo_Produto_InsumoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Tipo_Produto_InsumoDefaultArgs<ExtArgs>>): Prisma__Tipo_Produto_InsumoClient<$Result.GetResult<Prisma.$Tipo_Produto_InsumoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    tpi<T extends Produto_InsumoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Produto_InsumoDefaultArgs<ExtArgs>>): Prisma__Produto_InsumoClient<$Result.GetResult<Prisma.$Produto_InsumoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2586,7 +2586,7 @@ export namespace Prisma {
     readonly id_insumo_produto: FieldRef<"Movimentacao", 'Int'>
     readonly quantidade: FieldRef<"Movimentacao", 'Int'>
     readonly tipo_movimentacao: FieldRef<"Movimentacao", 'String'>
-    readonly tipo: FieldRef<"Movimentacao", 'String'>
+    readonly tipo_i_p: FieldRef<"Movimentacao", 'String'>
     readonly date: FieldRef<"Movimentacao", 'DateTime'>
   }
     
@@ -2963,15 +2963,15 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const Tipo_Produto_InsumoScalarFieldEnum: {
+  export const Produto_InsumoScalarFieldEnum: {
     id: 'id',
-    tipo_de_insumo: 'tipo_de_insumo',
+    nome: 'nome',
     quantidade: 'quantidade',
     fornecedor: 'fornecedor',
-    tipo_de_produto: 'tipo_de_produto'
+    tipo: 'tipo'
   };
 
-  export type Tipo_Produto_InsumoScalarFieldEnum = (typeof Tipo_Produto_InsumoScalarFieldEnum)[keyof typeof Tipo_Produto_InsumoScalarFieldEnum]
+  export type Produto_InsumoScalarFieldEnum = (typeof Produto_InsumoScalarFieldEnum)[keyof typeof Produto_InsumoScalarFieldEnum]
 
 
   export const MovimentacaoScalarFieldEnum: {
@@ -2979,7 +2979,7 @@ export namespace Prisma {
     id_insumo_produto: 'id_insumo_produto',
     quantidade: 'quantidade',
     tipo_movimentacao: 'tipo_movimentacao',
-    tipo: 'tipo',
+    tipo_i_p: 'tipo_i_p',
     date: 'date'
   };
 
@@ -2994,18 +2994,18 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const Tipo_Produto_InsumoOrderByRelevanceFieldEnum: {
-    tipo_de_insumo: 'tipo_de_insumo',
+  export const Produto_InsumoOrderByRelevanceFieldEnum: {
+    nome: 'nome',
     fornecedor: 'fornecedor',
-    tipo_de_produto: 'tipo_de_produto'
+    tipo: 'tipo'
   };
 
-  export type Tipo_Produto_InsumoOrderByRelevanceFieldEnum = (typeof Tipo_Produto_InsumoOrderByRelevanceFieldEnum)[keyof typeof Tipo_Produto_InsumoOrderByRelevanceFieldEnum]
+  export type Produto_InsumoOrderByRelevanceFieldEnum = (typeof Produto_InsumoOrderByRelevanceFieldEnum)[keyof typeof Produto_InsumoOrderByRelevanceFieldEnum]
 
 
   export const MovimentacaoOrderByRelevanceFieldEnum: {
     tipo_movimentacao: 'tipo_movimentacao',
-    tipo: 'tipo'
+    tipo_i_p: 'tipo_i_p'
   };
 
   export type MovimentacaoOrderByRelevanceFieldEnum = (typeof MovimentacaoOrderByRelevanceFieldEnum)[keyof typeof MovimentacaoOrderByRelevanceFieldEnum]
@@ -3047,62 +3047,62 @@ export namespace Prisma {
    */
 
 
-  export type Tipo_Produto_InsumoWhereInput = {
-    AND?: Tipo_Produto_InsumoWhereInput | Tipo_Produto_InsumoWhereInput[]
-    OR?: Tipo_Produto_InsumoWhereInput[]
-    NOT?: Tipo_Produto_InsumoWhereInput | Tipo_Produto_InsumoWhereInput[]
-    id?: IntFilter<"Tipo_Produto_Insumo"> | number
-    tipo_de_insumo?: StringFilter<"Tipo_Produto_Insumo"> | string
-    quantidade?: IntFilter<"Tipo_Produto_Insumo"> | number
-    fornecedor?: StringFilter<"Tipo_Produto_Insumo"> | string
-    tipo_de_produto?: StringFilter<"Tipo_Produto_Insumo"> | string
+  export type Produto_InsumoWhereInput = {
+    AND?: Produto_InsumoWhereInput | Produto_InsumoWhereInput[]
+    OR?: Produto_InsumoWhereInput[]
+    NOT?: Produto_InsumoWhereInput | Produto_InsumoWhereInput[]
+    id?: IntFilter<"Produto_Insumo"> | number
+    nome?: StringFilter<"Produto_Insumo"> | string
+    quantidade?: IntFilter<"Produto_Insumo"> | number
+    fornecedor?: StringFilter<"Produto_Insumo"> | string
+    tipo?: StringFilter<"Produto_Insumo"> | string
     movimentacoes?: MovimentacaoListRelationFilter
   }
 
-  export type Tipo_Produto_InsumoOrderByWithRelationInput = {
+  export type Produto_InsumoOrderByWithRelationInput = {
     id?: SortOrder
-    tipo_de_insumo?: SortOrder
+    nome?: SortOrder
     quantidade?: SortOrder
     fornecedor?: SortOrder
-    tipo_de_produto?: SortOrder
+    tipo?: SortOrder
     movimentacoes?: MovimentacaoOrderByRelationAggregateInput
-    _relevance?: Tipo_Produto_InsumoOrderByRelevanceInput
+    _relevance?: Produto_InsumoOrderByRelevanceInput
   }
 
-  export type Tipo_Produto_InsumoWhereUniqueInput = Prisma.AtLeast<{
+  export type Produto_InsumoWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: Tipo_Produto_InsumoWhereInput | Tipo_Produto_InsumoWhereInput[]
-    OR?: Tipo_Produto_InsumoWhereInput[]
-    NOT?: Tipo_Produto_InsumoWhereInput | Tipo_Produto_InsumoWhereInput[]
-    tipo_de_insumo?: StringFilter<"Tipo_Produto_Insumo"> | string
-    quantidade?: IntFilter<"Tipo_Produto_Insumo"> | number
-    fornecedor?: StringFilter<"Tipo_Produto_Insumo"> | string
-    tipo_de_produto?: StringFilter<"Tipo_Produto_Insumo"> | string
+    AND?: Produto_InsumoWhereInput | Produto_InsumoWhereInput[]
+    OR?: Produto_InsumoWhereInput[]
+    NOT?: Produto_InsumoWhereInput | Produto_InsumoWhereInput[]
+    nome?: StringFilter<"Produto_Insumo"> | string
+    quantidade?: IntFilter<"Produto_Insumo"> | number
+    fornecedor?: StringFilter<"Produto_Insumo"> | string
+    tipo?: StringFilter<"Produto_Insumo"> | string
     movimentacoes?: MovimentacaoListRelationFilter
   }, "id">
 
-  export type Tipo_Produto_InsumoOrderByWithAggregationInput = {
+  export type Produto_InsumoOrderByWithAggregationInput = {
     id?: SortOrder
-    tipo_de_insumo?: SortOrder
+    nome?: SortOrder
     quantidade?: SortOrder
     fornecedor?: SortOrder
-    tipo_de_produto?: SortOrder
-    _count?: Tipo_Produto_InsumoCountOrderByAggregateInput
-    _avg?: Tipo_Produto_InsumoAvgOrderByAggregateInput
-    _max?: Tipo_Produto_InsumoMaxOrderByAggregateInput
-    _min?: Tipo_Produto_InsumoMinOrderByAggregateInput
-    _sum?: Tipo_Produto_InsumoSumOrderByAggregateInput
+    tipo?: SortOrder
+    _count?: Produto_InsumoCountOrderByAggregateInput
+    _avg?: Produto_InsumoAvgOrderByAggregateInput
+    _max?: Produto_InsumoMaxOrderByAggregateInput
+    _min?: Produto_InsumoMinOrderByAggregateInput
+    _sum?: Produto_InsumoSumOrderByAggregateInput
   }
 
-  export type Tipo_Produto_InsumoScalarWhereWithAggregatesInput = {
-    AND?: Tipo_Produto_InsumoScalarWhereWithAggregatesInput | Tipo_Produto_InsumoScalarWhereWithAggregatesInput[]
-    OR?: Tipo_Produto_InsumoScalarWhereWithAggregatesInput[]
-    NOT?: Tipo_Produto_InsumoScalarWhereWithAggregatesInput | Tipo_Produto_InsumoScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Tipo_Produto_Insumo"> | number
-    tipo_de_insumo?: StringWithAggregatesFilter<"Tipo_Produto_Insumo"> | string
-    quantidade?: IntWithAggregatesFilter<"Tipo_Produto_Insumo"> | number
-    fornecedor?: StringWithAggregatesFilter<"Tipo_Produto_Insumo"> | string
-    tipo_de_produto?: StringWithAggregatesFilter<"Tipo_Produto_Insumo"> | string
+  export type Produto_InsumoScalarWhereWithAggregatesInput = {
+    AND?: Produto_InsumoScalarWhereWithAggregatesInput | Produto_InsumoScalarWhereWithAggregatesInput[]
+    OR?: Produto_InsumoScalarWhereWithAggregatesInput[]
+    NOT?: Produto_InsumoScalarWhereWithAggregatesInput | Produto_InsumoScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Produto_Insumo"> | number
+    nome?: StringWithAggregatesFilter<"Produto_Insumo"> | string
+    quantidade?: IntWithAggregatesFilter<"Produto_Insumo"> | number
+    fornecedor?: StringWithAggregatesFilter<"Produto_Insumo"> | string
+    tipo?: StringWithAggregatesFilter<"Produto_Insumo"> | string
   }
 
   export type MovimentacaoWhereInput = {
@@ -3113,9 +3113,9 @@ export namespace Prisma {
     id_insumo_produto?: IntFilter<"Movimentacao"> | number
     quantidade?: IntFilter<"Movimentacao"> | number
     tipo_movimentacao?: StringFilter<"Movimentacao"> | string
-    tipo?: StringFilter<"Movimentacao"> | string
+    tipo_i_p?: StringFilter<"Movimentacao"> | string
     date?: DateTimeFilter<"Movimentacao"> | Date | string
-    tpi?: XOR<Tipo_Produto_InsumoScalarRelationFilter, Tipo_Produto_InsumoWhereInput>
+    tpi?: XOR<Produto_InsumoScalarRelationFilter, Produto_InsumoWhereInput>
   }
 
   export type MovimentacaoOrderByWithRelationInput = {
@@ -3123,9 +3123,9 @@ export namespace Prisma {
     id_insumo_produto?: SortOrder
     quantidade?: SortOrder
     tipo_movimentacao?: SortOrder
-    tipo?: SortOrder
+    tipo_i_p?: SortOrder
     date?: SortOrder
-    tpi?: Tipo_Produto_InsumoOrderByWithRelationInput
+    tpi?: Produto_InsumoOrderByWithRelationInput
     _relevance?: MovimentacaoOrderByRelevanceInput
   }
 
@@ -3137,9 +3137,9 @@ export namespace Prisma {
     id_insumo_produto?: IntFilter<"Movimentacao"> | number
     quantidade?: IntFilter<"Movimentacao"> | number
     tipo_movimentacao?: StringFilter<"Movimentacao"> | string
-    tipo?: StringFilter<"Movimentacao"> | string
+    tipo_i_p?: StringFilter<"Movimentacao"> | string
     date?: DateTimeFilter<"Movimentacao"> | Date | string
-    tpi?: XOR<Tipo_Produto_InsumoScalarRelationFilter, Tipo_Produto_InsumoWhereInput>
+    tpi?: XOR<Produto_InsumoScalarRelationFilter, Produto_InsumoWhereInput>
   }, "id">
 
   export type MovimentacaoOrderByWithAggregationInput = {
@@ -3147,7 +3147,7 @@ export namespace Prisma {
     id_insumo_produto?: SortOrder
     quantidade?: SortOrder
     tipo_movimentacao?: SortOrder
-    tipo?: SortOrder
+    tipo_i_p?: SortOrder
     date?: SortOrder
     _count?: MovimentacaoCountOrderByAggregateInput
     _avg?: MovimentacaoAvgOrderByAggregateInput
@@ -3164,73 +3164,73 @@ export namespace Prisma {
     id_insumo_produto?: IntWithAggregatesFilter<"Movimentacao"> | number
     quantidade?: IntWithAggregatesFilter<"Movimentacao"> | number
     tipo_movimentacao?: StringWithAggregatesFilter<"Movimentacao"> | string
-    tipo?: StringWithAggregatesFilter<"Movimentacao"> | string
+    tipo_i_p?: StringWithAggregatesFilter<"Movimentacao"> | string
     date?: DateTimeWithAggregatesFilter<"Movimentacao"> | Date | string
   }
 
-  export type Tipo_Produto_InsumoCreateInput = {
-    tipo_de_insumo: string
+  export type Produto_InsumoCreateInput = {
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
+    tipo: string
     movimentacoes?: MovimentacaoCreateNestedManyWithoutTpiInput
   }
 
-  export type Tipo_Produto_InsumoUncheckedCreateInput = {
+  export type Produto_InsumoUncheckedCreateInput = {
     id?: number
-    tipo_de_insumo: string
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
+    tipo: string
     movimentacoes?: MovimentacaoUncheckedCreateNestedManyWithoutTpiInput
   }
 
-  export type Tipo_Produto_InsumoUpdateInput = {
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+  export type Produto_InsumoUpdateInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     movimentacoes?: MovimentacaoUpdateManyWithoutTpiNestedInput
   }
 
-  export type Tipo_Produto_InsumoUncheckedUpdateInput = {
+  export type Produto_InsumoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
     movimentacoes?: MovimentacaoUncheckedUpdateManyWithoutTpiNestedInput
   }
 
-  export type Tipo_Produto_InsumoCreateManyInput = {
+  export type Produto_InsumoCreateManyInput = {
     id?: number
-    tipo_de_insumo: string
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
+    tipo: string
   }
 
-  export type Tipo_Produto_InsumoUpdateManyMutationInput = {
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+  export type Produto_InsumoUpdateManyMutationInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Tipo_Produto_InsumoUncheckedUpdateManyInput = {
+  export type Produto_InsumoUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
   }
 
   export type MovimentacaoCreateInput = {
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
-    tpi: Tipo_Produto_InsumoCreateNestedOneWithoutMovimentacoesInput
+    tpi: Produto_InsumoCreateNestedOneWithoutMovimentacoesInput
   }
 
   export type MovimentacaoUncheckedCreateInput = {
@@ -3238,16 +3238,16 @@ export namespace Prisma {
     id_insumo_produto: number
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
   }
 
   export type MovimentacaoUpdateInput = {
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    tpi?: Tipo_Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput
+    tpi?: Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput
   }
 
   export type MovimentacaoUncheckedUpdateInput = {
@@ -3255,7 +3255,7 @@ export namespace Prisma {
     id_insumo_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3264,14 +3264,14 @@ export namespace Prisma {
     id_insumo_produto: number
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
   }
 
   export type MovimentacaoUpdateManyMutationInput = {
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3280,7 +3280,7 @@ export namespace Prisma {
     id_insumo_produto?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3320,42 +3320,42 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type Tipo_Produto_InsumoOrderByRelevanceInput = {
-    fields: Tipo_Produto_InsumoOrderByRelevanceFieldEnum | Tipo_Produto_InsumoOrderByRelevanceFieldEnum[]
+  export type Produto_InsumoOrderByRelevanceInput = {
+    fields: Produto_InsumoOrderByRelevanceFieldEnum | Produto_InsumoOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type Tipo_Produto_InsumoCountOrderByAggregateInput = {
+  export type Produto_InsumoCountOrderByAggregateInput = {
     id?: SortOrder
-    tipo_de_insumo?: SortOrder
+    nome?: SortOrder
     quantidade?: SortOrder
     fornecedor?: SortOrder
-    tipo_de_produto?: SortOrder
+    tipo?: SortOrder
   }
 
-  export type Tipo_Produto_InsumoAvgOrderByAggregateInput = {
+  export type Produto_InsumoAvgOrderByAggregateInput = {
     id?: SortOrder
     quantidade?: SortOrder
   }
 
-  export type Tipo_Produto_InsumoMaxOrderByAggregateInput = {
+  export type Produto_InsumoMaxOrderByAggregateInput = {
     id?: SortOrder
-    tipo_de_insumo?: SortOrder
-    quantidade?: SortOrder
-    fornecedor?: SortOrder
-    tipo_de_produto?: SortOrder
-  }
-
-  export type Tipo_Produto_InsumoMinOrderByAggregateInput = {
-    id?: SortOrder
-    tipo_de_insumo?: SortOrder
+    nome?: SortOrder
     quantidade?: SortOrder
     fornecedor?: SortOrder
-    tipo_de_produto?: SortOrder
+    tipo?: SortOrder
   }
 
-  export type Tipo_Produto_InsumoSumOrderByAggregateInput = {
+  export type Produto_InsumoMinOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    quantidade?: SortOrder
+    fornecedor?: SortOrder
+    tipo?: SortOrder
+  }
+
+  export type Produto_InsumoSumOrderByAggregateInput = {
     id?: SortOrder
     quantidade?: SortOrder
   }
@@ -3405,9 +3405,9 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type Tipo_Produto_InsumoScalarRelationFilter = {
-    is?: Tipo_Produto_InsumoWhereInput
-    isNot?: Tipo_Produto_InsumoWhereInput
+  export type Produto_InsumoScalarRelationFilter = {
+    is?: Produto_InsumoWhereInput
+    isNot?: Produto_InsumoWhereInput
   }
 
   export type MovimentacaoOrderByRelevanceInput = {
@@ -3421,7 +3421,7 @@ export namespace Prisma {
     id_insumo_produto?: SortOrder
     quantidade?: SortOrder
     tipo_movimentacao?: SortOrder
-    tipo?: SortOrder
+    tipo_i_p?: SortOrder
     date?: SortOrder
   }
 
@@ -3436,7 +3436,7 @@ export namespace Prisma {
     id_insumo_produto?: SortOrder
     quantidade?: SortOrder
     tipo_movimentacao?: SortOrder
-    tipo?: SortOrder
+    tipo_i_p?: SortOrder
     date?: SortOrder
   }
 
@@ -3445,7 +3445,7 @@ export namespace Prisma {
     id_insumo_produto?: SortOrder
     quantidade?: SortOrder
     tipo_movimentacao?: SortOrder
-    tipo?: SortOrder
+    tipo_i_p?: SortOrder
     date?: SortOrder
   }
 
@@ -3523,22 +3523,22 @@ export namespace Prisma {
     deleteMany?: MovimentacaoScalarWhereInput | MovimentacaoScalarWhereInput[]
   }
 
-  export type Tipo_Produto_InsumoCreateNestedOneWithoutMovimentacoesInput = {
-    create?: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
-    connectOrCreate?: Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
-    connect?: Tipo_Produto_InsumoWhereUniqueInput
+  export type Produto_InsumoCreateNestedOneWithoutMovimentacoesInput = {
+    create?: XOR<Produto_InsumoCreateWithoutMovimentacoesInput, Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    connectOrCreate?: Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
+    connect?: Produto_InsumoWhereUniqueInput
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
 
-  export type Tipo_Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput = {
-    create?: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
-    connectOrCreate?: Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
-    upsert?: Tipo_Produto_InsumoUpsertWithoutMovimentacoesInput
-    connect?: Tipo_Produto_InsumoWhereUniqueInput
-    update?: XOR<XOR<Tipo_Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput, Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput>, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
+  export type Produto_InsumoUpdateOneRequiredWithoutMovimentacoesNestedInput = {
+    create?: XOR<Produto_InsumoCreateWithoutMovimentacoesInput, Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    connectOrCreate?: Produto_InsumoCreateOrConnectWithoutMovimentacoesInput
+    upsert?: Produto_InsumoUpsertWithoutMovimentacoesInput
+    connect?: Produto_InsumoWhereUniqueInput
+    update?: XOR<XOR<Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput, Produto_InsumoUpdateWithoutMovimentacoesInput>, Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3640,7 +3640,7 @@ export namespace Prisma {
   export type MovimentacaoCreateWithoutTpiInput = {
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
   }
 
@@ -3648,7 +3648,7 @@ export namespace Prisma {
     id?: number
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
   }
 
@@ -3686,68 +3686,68 @@ export namespace Prisma {
     id_insumo_produto?: IntFilter<"Movimentacao"> | number
     quantidade?: IntFilter<"Movimentacao"> | number
     tipo_movimentacao?: StringFilter<"Movimentacao"> | string
-    tipo?: StringFilter<"Movimentacao"> | string
+    tipo_i_p?: StringFilter<"Movimentacao"> | string
     date?: DateTimeFilter<"Movimentacao"> | Date | string
   }
 
-  export type Tipo_Produto_InsumoCreateWithoutMovimentacoesInput = {
-    tipo_de_insumo: string
+  export type Produto_InsumoCreateWithoutMovimentacoesInput = {
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
+    tipo: string
   }
 
-  export type Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput = {
+  export type Produto_InsumoUncheckedCreateWithoutMovimentacoesInput = {
     id?: number
-    tipo_de_insumo: string
+    nome: string
     quantidade: number
     fornecedor: string
-    tipo_de_produto: string
+    tipo: string
   }
 
-  export type Tipo_Produto_InsumoCreateOrConnectWithoutMovimentacoesInput = {
-    where: Tipo_Produto_InsumoWhereUniqueInput
-    create: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+  export type Produto_InsumoCreateOrConnectWithoutMovimentacoesInput = {
+    where: Produto_InsumoWhereUniqueInput
+    create: XOR<Produto_InsumoCreateWithoutMovimentacoesInput, Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
   }
 
-  export type Tipo_Produto_InsumoUpsertWithoutMovimentacoesInput = {
-    update: XOR<Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
-    create: XOR<Tipo_Produto_InsumoCreateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
-    where?: Tipo_Produto_InsumoWhereInput
+  export type Produto_InsumoUpsertWithoutMovimentacoesInput = {
+    update: XOR<Produto_InsumoUpdateWithoutMovimentacoesInput, Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
+    create: XOR<Produto_InsumoCreateWithoutMovimentacoesInput, Produto_InsumoUncheckedCreateWithoutMovimentacoesInput>
+    where?: Produto_InsumoWhereInput
   }
 
-  export type Tipo_Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput = {
-    where?: Tipo_Produto_InsumoWhereInput
-    data: XOR<Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput, Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
+  export type Produto_InsumoUpdateToOneWithWhereWithoutMovimentacoesInput = {
+    where?: Produto_InsumoWhereInput
+    data: XOR<Produto_InsumoUpdateWithoutMovimentacoesInput, Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput>
   }
 
-  export type Tipo_Produto_InsumoUpdateWithoutMovimentacoesInput = {
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+  export type Produto_InsumoUpdateWithoutMovimentacoesInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Tipo_Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput = {
+  export type Produto_InsumoUncheckedUpdateWithoutMovimentacoesInput = {
     id?: IntFieldUpdateOperationsInput | number
-    tipo_de_insumo?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
     quantidade?: IntFieldUpdateOperationsInput | number
     fornecedor?: StringFieldUpdateOperationsInput | string
-    tipo_de_produto?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
   }
 
   export type MovimentacaoCreateManyTpiInput = {
     id?: number
     quantidade: number
     tipo_movimentacao: string
-    tipo: string
+    tipo_i_p: string
     date: Date | string
   }
 
   export type MovimentacaoUpdateWithoutTpiInput = {
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3755,7 +3755,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3763,7 +3763,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     quantidade?: IntFieldUpdateOperationsInput | number
     tipo_movimentacao?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
+    tipo_i_p?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

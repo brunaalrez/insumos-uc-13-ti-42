@@ -120,12 +120,12 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.Tipo_Produto_InsumoScalarFieldEnum = {
+exports.Prisma.Produto_InsumoScalarFieldEnum = {
   id: 'id',
-  tipo_de_insumo: 'tipo_de_insumo',
+  nome: 'nome',
   quantidade: 'quantidade',
   fornecedor: 'fornecedor',
-  tipo_de_produto: 'tipo_de_produto'
+  tipo: 'tipo'
 };
 
 exports.Prisma.MovimentacaoScalarFieldEnum = {
@@ -133,7 +133,7 @@ exports.Prisma.MovimentacaoScalarFieldEnum = {
   id_insumo_produto: 'id_insumo_produto',
   quantidade: 'quantidade',
   tipo_movimentacao: 'tipo_movimentacao',
-  tipo: 'tipo',
+  tipo_i_p: 'tipo_i_p',
   date: 'date'
 };
 
@@ -142,20 +142,20 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.Tipo_Produto_InsumoOrderByRelevanceFieldEnum = {
-  tipo_de_insumo: 'tipo_de_insumo',
+exports.Prisma.Produto_InsumoOrderByRelevanceFieldEnum = {
+  nome: 'nome',
   fornecedor: 'fornecedor',
-  tipo_de_produto: 'tipo_de_produto'
+  tipo: 'tipo'
 };
 
 exports.Prisma.MovimentacaoOrderByRelevanceFieldEnum = {
   tipo_movimentacao: 'tipo_movimentacao',
-  tipo: 'tipo'
+  tipo_i_p: 'tipo_i_p'
 };
 
 
 exports.Prisma.ModelName = {
-  Tipo_Produto_Insumo: 'Tipo_Produto_Insumo',
+  Produto_Insumo: 'Produto_Insumo',
   Movimentacao: 'Movimentacao'
 };
 

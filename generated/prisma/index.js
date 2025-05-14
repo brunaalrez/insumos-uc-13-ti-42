@@ -93,12 +93,12 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.Tipo_Produto_InsumoScalarFieldEnum = {
+exports.Prisma.Produto_InsumoScalarFieldEnum = {
   id: 'id',
-  tipo_de_insumo: 'tipo_de_insumo',
+  nome: 'nome',
   quantidade: 'quantidade',
   fornecedor: 'fornecedor',
-  tipo_de_produto: 'tipo_de_produto'
+  tipo: 'tipo'
 };
 
 exports.Prisma.MovimentacaoScalarFieldEnum = {
@@ -106,7 +106,7 @@ exports.Prisma.MovimentacaoScalarFieldEnum = {
   id_insumo_produto: 'id_insumo_produto',
   quantidade: 'quantidade',
   tipo_movimentacao: 'tipo_movimentacao',
-  tipo: 'tipo',
+  tipo_i_p: 'tipo_i_p',
   date: 'date'
 };
 
@@ -115,20 +115,20 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.Tipo_Produto_InsumoOrderByRelevanceFieldEnum = {
-  tipo_de_insumo: 'tipo_de_insumo',
+exports.Prisma.Produto_InsumoOrderByRelevanceFieldEnum = {
+  nome: 'nome',
   fornecedor: 'fornecedor',
-  tipo_de_produto: 'tipo_de_produto'
+  tipo: 'tipo'
 };
 
 exports.Prisma.MovimentacaoOrderByRelevanceFieldEnum = {
   tipo_movimentacao: 'tipo_movimentacao',
-  tipo: 'tipo'
+  tipo_i_p: 'tipo_i_p'
 };
 
 
 exports.Prisma.ModelName = {
-  Tipo_Produto_Insumo: 'Tipo_Produto_Insumo',
+  Produto_Insumo: 'Produto_Insumo',
   Movimentacao: 'Movimentacao'
 };
 /**
@@ -178,8 +178,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\n// model Usuario {\n//   id Int @id @default(autoincrement())\n//   nome String\n//   data_de_nascimento String\n//   cpf String\n//   rg String\n//   email String\n//   tipo_de_usuario Int\n//   rua String\n//   numero String\n//   bairro String\n//   cidade String\n//   uf String\n//   senha String\n//   telefone String\n//   criado_em DateTime\n//   criado_por String\n//   @@map(\"criar usuários\") // define o nome da tebela\n// }\n\nmodel Tipo_Produto_Insumo {\n  id              Int            @id @default(autoincrement())\n  tipo_de_insumo  String\n  quantidade      Int\n  fornecedor      String\n  tipo_de_produto String\n  movimentacoes   Movimentacao[]\n\n  @@map(\"estoque\") // define o nome da tebela\n}\n\nmodel Movimentacao {\n  id                Int                 @id @default(autoincrement())\n  id_insumo_produto Int\n  quantidade        Int\n  tipo_movimentacao String\n  tipo              String\n  date              DateTime\n  tpi               Tipo_Produto_Insumo @relation(fields: [id_insumo_produto], references: [id])\n\n  @@map(\"movimentacao\") // define o nome da tebela\n}\n",
-  "inlineSchemaHash": "5b799864e09100a8f8fb98e72f3ed30cdeb8df18a77b50489075c2f770f11cf5",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\n// model Usuario {\n//   id Int @id @default(autoincrement())\n//   nome String\n//   data_de_nascimento String\n//   cpf String\n//   rg String\n//   email String\n//   tipo_de_usuario Int\n//   rua String\n//   numero String\n//   bairro String\n//   cidade String\n//   uf String\n//   senha String\n//   telefone String\n//   criado_em DateTime\n//   criado_por String\n//   @@map(\"criar usuários\") // define o nome da tebela\n// }\n\nmodel Produto_Insumo {\n  id            Int            @id @default(autoincrement())\n  nome          String\n  quantidade    Int\n  fornecedor    String\n  tipo          String\n  movimentacoes Movimentacao[]\n\n  @@map(\"estoque\") // define o nome da tebela\n}\n\nmodel Movimentacao {\n  id                Int            @id @default(autoincrement())\n  id_insumo_produto Int\n  quantidade        Int\n  tipo_movimentacao String\n  tipo_i_p          String\n  date              DateTime\n  tpi               Produto_Insumo @relation(fields: [id_insumo_produto], references: [id])\n\n  @@map(\"movimentacao\") // define o nome da tebela\n}\n",
+  "inlineSchemaHash": "b4f9c058ca2180f67697551c7119e10da188e1584c7739c2e1a3e1aaea127e7d",
   "copyEngine": true
 }
 
@@ -200,7 +200,7 @@ if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   config.isBundled = true
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Tipo_Produto_Insumo\":{\"dbName\":\"estoque\",\"schema\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo_de_insumo\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"quantidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"fornecedor\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo_de_produto\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"movimentacoes\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Movimentacao\",\"nativeType\":null,\"relationName\":\"MovimentacaoToTipo_Produto_Insumo\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Movimentacao\":{\"dbName\":\"movimentacao\",\"schema\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"id_insumo_produto\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"quantidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo_movimentacao\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"date\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"DateTime\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tpi\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Tipo_Produto_Insumo\",\"nativeType\":null,\"relationName\":\"MovimentacaoToTipo_Produto_Insumo\",\"relationFromFields\":[\"id_insumo_produto\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Produto_Insumo\":{\"dbName\":\"estoque\",\"schema\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"nome\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"quantidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"fornecedor\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"movimentacoes\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Movimentacao\",\"nativeType\":null,\"relationName\":\"MovimentacaoToProduto_Insumo\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Movimentacao\":{\"dbName\":\"movimentacao\",\"schema\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"nativeType\":null,\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"id_insumo_produto\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"quantidade\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo_movimentacao\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tipo_i_p\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"date\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"DateTime\",\"nativeType\":null,\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"tpi\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Produto_Insumo\",\"nativeType\":null,\"relationName\":\"MovimentacaoToProduto_Insumo\",\"relationFromFields\":[\"id_insumo_produto\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = undefined
 config.compilerWasm = undefined
