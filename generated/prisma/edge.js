@@ -141,7 +141,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\bruna.alvarez\\OneDrive - SENAC - SP\\Área de Trabalho\\back-end\\tutorial-back-end\\insumos-uc-13-ti-42\\generated\\prisma",
+      "value": "C:\\Users\\Fred\\insumos-uc-13-ti-42\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -155,7 +155,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\bruna.alvarez\\OneDrive - SENAC - SP\\Área de Trabalho\\back-end\\tutorial-back-end\\insumos-uc-13-ti-42\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\Fred\\insumos-uc-13-ti-42\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -173,7 +173,7 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mysql://root:@localhost:3306/strongblocks"
+        "value": "mysql://root:@localhost:3306/strongblocksproject"
       }
     }
   },

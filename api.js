@@ -165,9 +165,9 @@ app.get('/movimentacao', async (req, res) => {
     res.json(movimentacoes); // Retorna a lista de movimentações em formato JSON
   });
 
-  app.get('/movimentacoes/:tipo', async (req, res) => {
-    const tipo = req.params.tipo; 
-    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo },  include: {
+  app.get('/movimentacoes/:tipo_i_p', async (req, res) => {
+    const tipo_i_p = req.params.tipo_i_p; 
+    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo_i_p },  include: {
       tpi: true // <- inclui os dados relacionados da tabela Tipo_Produto_Insumo
     } });
    
