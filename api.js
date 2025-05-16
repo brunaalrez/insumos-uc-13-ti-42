@@ -167,9 +167,16 @@ app.get('/movimentacao', async (req, res) => {
 
   app.get('/movimentacoes/:tipo_i_p', async (req, res) => {
     const tipo_i_p = req.params.tipo_i_p; 
-    const movimentacao = await prisma.movimentacao.findMany({ where: { tipo_i_p },  include: {
-      tpi: true // <- inclui os dados relacionados da tabela Tipo_Produto_Insumo
-    } });
+const movimentacao = await prisma.movimentacao.findMany({
+  where: {
+    tpi: {
+      tipo: tipo_i_p // <- compara com o campo `tipo` da tabela `tpi`
+    }
+  },
+  include: {
+    tpi: true // inclui os dados relacionados da tabela Tipo_Produto_Insumo
+  }
+});
    
     if (movimentacao === null) {
       return res.status(404).json({ mensagem: 'Movimentação não encontrada' }); 
