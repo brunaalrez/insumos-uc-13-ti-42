@@ -125,7 +125,8 @@ exports.Prisma.Produto_InsumoScalarFieldEnum = {
   nome: 'nome',
   quantidade: 'quantidade',
   fornecedor: 'fornecedor',
-  tipo: 'tipo'
+  tipo: 'tipo',
+  categoria: 'categoria'
 };
 
 exports.Prisma.MovimentacaoScalarFieldEnum = {
@@ -142,10 +143,16 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 exports.Prisma.Produto_InsumoOrderByRelevanceFieldEnum = {
   nome: 'nome',
   fornecedor: 'fornecedor',
-  tipo: 'tipo'
+  tipo: 'tipo',
+  categoria: 'categoria'
 };
 
 exports.Prisma.MovimentacaoOrderByRelevanceFieldEnum = {
