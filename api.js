@@ -200,16 +200,16 @@ const movimentacao = await prisma.movimentacao.findMany({
   // Rotas para Tipo_Produto_Insumo
  //
 // Rota para obter todos os tipos de produto insumo
-app.get('/tipo_produto_insumo', async (req, res) => {
-    const tipos = await prisma.tipo_Produto_Insumo.findMany(); // Busca todos os tipos no banco
+app.get('/produto_insumo', async (req, res) => {
+    const tipos = await prisma.Produto_Insumo.findMany(); // Busca todos os tipos no banco
     res.json(tipos); // Retorna a lista de tipos em formato JSON
 
   });
    
   // Rota para obter um tipo de produto insumo específico pelo ID
-  app.get('/tipo_produto_insumo/:id', async (req, res) => {
+  app.get('/produto_insumo/:id', async (req, res) => {
     const id = parseInt(req.params.id); // Converte o ID da URL para número
-    const tipo = await prisma.tipo_Produto_Insumo.findUnique({ where: { id } }); // Busca o tipo pelo ID
+    const tipo = await prisma.Produto_Insumo.findUnique({ where: { id } }); // Busca o tipo pelo ID
    
     if (tipo === null) {
       return res.status(404).json({ mensagem: 'Tipo de Produto/Insumo não encontrado' }); // Retorna erro se não encontrado
@@ -219,38 +219,36 @@ app.get('/tipo_produto_insumo', async (req, res) => {
   });
 
   app.get('/produtos/:tipo', async (req, res) =>{
-    const tipo_de_produto = 'produto';
-    const tipo_de_insumo = req.params.tipo;
+    const tipo = 'produto';
+    const categoria = req.params.tipo;
 
-    const produtos = await prisma.tipo_Produto_Insumo.findMany({
+    const produtos = await prisma.Produto_Insumo.findMany({
         where: {
-            tipo_de_produto,
-            tipo_de_insumo
+            tipo,
+            categoria
         }
     });
 
     if(produtos.length === 0) {
         return res.status(404).json({mensagem: 'Produto não existe'});
     }else{
-        return res.status(200).json(produtos[0]);
+        return res.status(200).json(produtos);
     }
   })
 
-  app.get('/insumo/:tipo', async (req, res) =>{
-    const tipo_de_produto = 'insumo';
-    const tipo_de_insumo = req.params.tipo;
+  app.get('/insumo', async (req, res) =>{
+    const tipo = 'insumo';
 
-    const insumo = await prisma.tipo_Produto_Insumo.findMany({
+    const insumo = await prisma.Produto_Insumo.findMany({
         where: {
-            tipo_de_produto,
-            tipo_de_insumo
+            tipo
         }
     });
 
     if(insumo.length === 0) {
         return res.status(404).json({mensagem: 'Insumo não existe'});
     }else{
-        return res.status(200).json(insumo[0]);
+        return res.status(200).json(insumo);
     }
   })
 
