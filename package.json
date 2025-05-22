@@ -10,12 +10,12 @@
   "license": "ISC",
   "description": "npm install",
   "dependencies": {
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "^6.8.2",
     "cors": "^2.8.5",
     "express": "^4.21.1"
   },
   "devDependencies": {
-    "prisma": "^6.7.0"
+    "prisma": "^6.8.2"
   },
   "directories": {
     "test": "tests"

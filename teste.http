@@ -1,0 +1,38 @@
+
+### Rota para obter todas as movimentações
+GET http://localhost:4000/movimentacao HTTP/1.1
+content-type: application/json
+
+### Rota para obter movimentação especifica sendo dois tipos insumos e produto
+GET http://localhost:4000/movimentacoes/insumo HTTP/1.1
+content-type: application/json
+
+### Rota movimentção produto
+GET http://localhost:4000/movimentacoes/produto HTTP/1.1
+content-type: application/json
+
+### Rota para obter uma movimentação específica pelo ID
+GET http://localhost:4000/movimentacao/1 HTTP/1.1
+content-type: application/json
+
+### Rota para obter todos os tipos de produto ou insumo
+GET http://localhost:4000/produto_insumo HTTP/1.1
+content-type: application/json
+
+### Rota para obter um tipo de produto insumo específico pelo ID
+GET http://localhost:4000/produto_insumo/1 HTTP/1.1
+content-type: application/json
+
+### Rota para obter produtos de uma categoria específica
+GET http://localhost:4000/produtos/a HTTP/1.1
+content-type: application/json
+
+### Rota para obter produtos de uma categoria específica não exitente
+GET http://localhost:4000/produtos/alimentos HTTP/1.1
+content-type: application/json
+
+### Rota para obter todos os insumos
+GET http://localhost:4000/insumo HTTP/1.1
+content-type: application/json
+
+
