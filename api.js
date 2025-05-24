@@ -175,6 +175,9 @@ const movimentacao = await prisma.movimentacao.findMany({
   },
   include: {
     tpi: true // inclui os dados relacionados da tabela Tipo_Produto_Insumo
+  },
+  orderBy: {
+    date: 'asc' // ou 'desc' para ordem decrescente
   }
 });
    
