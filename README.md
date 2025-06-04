@@ -5,10 +5,22 @@ Este projeto foi desenvolvido como parte do Projeto Integrador da Unidade Curric
 
 🛠️ Tecnologias Utilizadas
 Node.js
-
 Express.js
-
 JavaScript
+
+📁 Estrutura do Projeto
+insumos-uc-13-ti-42/
+├── controllers/          # Lógica de controle das rotas
+├── routes/               # Definição das rotas da aplicação
+├── tests/                # Testes da aplicação
+├── api.js                # Arquivo principal da aplicação
+├── package.json          # Gerenciador de dependências e scripts
+├── package-lock.json     # Controle de versões das dependências
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── README.md             # Documentação do projeto
+└── teste.http            # Arquivo para testes de requisições HTTP
+
+
 
 🚀 Como Executar o Projeto
 Pré-requisitos
